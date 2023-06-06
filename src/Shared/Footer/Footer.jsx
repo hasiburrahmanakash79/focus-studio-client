@@ -17,7 +17,7 @@ const Footer = () => {
             <a href="https://www.facebook.com/HasiburP.Akash/" target="_blank" rel="noreferrer"><FaFacebook></FaFacebook></a>
             <a href="https://www.instagram.com/hasiburrahmanakash79/" target="_blank" rel="noreferrer"><FaInstagram></FaInstagram></a>
             <a href="https://twitter.com/HasiburRakash79" target="_blank" rel="noreferrer"><FaTwitter></FaTwitter></a>
-            <a href="https://www.youtube.com/@HasiburRahmanAkash/videos" target="_blank" rel="noreferrer"><FaYoutube></FaYoutube></a>
+            <a href="https://www.youtube.com/@HasiburRahmanAkash" target="_blank" rel="noreferrer"><FaYoutube></FaYoutube></a>
           </div>
         </div>
         <div>
