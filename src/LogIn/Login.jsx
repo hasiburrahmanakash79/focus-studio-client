@@ -1,11 +1,44 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { useForm } from "react-hook-form";
 import SocialLogin from "../components/SocialLogin/SocialLogin";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
   const [passShow, setPassShow] = useState(false);
+  const { logInUser } = useContext(AuthContext);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    logInUser(data.email, data.password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+        Swal.fire({
+          showConfirmButton: false,
+          timer: 2000,
+          title: "Login Successful",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    
+  };
   return (
     <div className="hero min-h-screen">
       <div className="md:flex justify-between items-center gap-12 px-3">
@@ -21,29 +54,28 @@ const Login = () => {
               alt=""
             />
           </div>
-          <form className="card-body">
+          <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
+              {...register("email", { required: true })}
                 type="email"
-                name="email"
                 placeholder="Enter your email"
                 className="input input-bordered"
-                required
               />
+              {errors.email && <span>This field is required</span>}
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
+              {...register("password", { required: true })}
                 type={passShow ? "text" : "password"}
-                name="password"
                 placeholder="enter your password"
                 className="input input-bordered"
-                required
               />
               <label className="label">
                 <a className="label-text-alt link link-hover">
@@ -63,10 +95,10 @@ const Login = () => {
               <button className="btn btn-warning">Login</button>
             </div>
           </form>
-          <div className="text-center mb-7 p-5">
+          <div className="text-center mb-7 px-5">
             <div className="divider"></div>
             <p className="font-semibold">Or Sign In with</p>
-            <div className="flex items-center justify-center gap-4 my-4">
+            <div className="flex items-center justify-center gap-4 my-2">
               <SocialLogin></SocialLogin>
             </div>
             <Link to="/signUp">

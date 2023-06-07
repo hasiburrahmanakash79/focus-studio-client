@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaBars, FaShoppingCart } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useContext } from "react";
 import Swal from "sweetalert2";
@@ -28,25 +28,26 @@ const Navbar = () => {
         <Link to="/contact">Contact us</Link>
       </li>
       <li>
-        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/dashboard">Classes</Link>
       </li>
       <li>
-        <Link to="/menu">Our menu</Link>
+        <Link to="/menu">Something</Link>
       </li>
       <li>
-        <Link to="/shop">Our shop</Link>
-      </li>
-      <li>
-        <Link to="/dashboard/myCart">
-          <div className="indicator">
-            <FaShoppingCart></FaShoppingCart>
-            <span className="badge badge-sm indicator-item">
-              +0
-            </span>
-          </div>
-        </Link>
+        <Link to="/shop">Something</Link>
       </li>
       {user ? (
+        <li>
+          <Link className="w-full" onClick={handleLogout}>
+            Log Out
+          </Link>
+        </li>
+      ) : (
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      )}
+      {/* {user ? (
         <div className="dropdown dropdown-end ml-5">
           <div className="tooltip tooltip-left" data-tip={user?.displayName}>
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -58,7 +59,7 @@ const Navbar = () => {
 
           <ul
             tabIndex={0}
-            className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-black rounded-box w-52"
+            className="mt-3 p-2 shadow menu menu-compact dropdown-content rounded-box w-52"
           >
             <li>
               <Link className="justify-between w-full">
@@ -76,7 +77,7 @@ const Navbar = () => {
         <li>
           <Link to="/login">Login</Link>
         </li>
-      )}
+      )} */}
     </>
   );
 
