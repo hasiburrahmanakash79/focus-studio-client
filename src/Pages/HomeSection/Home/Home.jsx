@@ -1,10 +1,12 @@
 import Banner from "../Banner/Banner";
+import PopularInstructor from "../PopularInstructor/PopularInstructor";
 
 
 const Home = () => {
     return (
         <div>
-           <Banner></Banner> 
+           <Banner></Banner>
+           <PopularInstructor></PopularInstructor> 
         </div>
     );
 };
