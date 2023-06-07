@@ -1,15 +1,15 @@
 import { useContext } from "react";
-// import { useLocation, useNavigate } from "react-router-dom";
-// import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const SocialLogin = () => {
   const { googleSignIn } = useContext(AuthContext);
 
-//   const navigate = useNavigate();
-//   const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-//   const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/";
 
   // googleLogin
   const handleGoogleLogin = () => {
@@ -17,6 +17,14 @@ const SocialLogin = () => {
       .then((result) => {
         const signInUser = result.user;
         console.log(signInUser);
+        
+        navigate(from, { replace: true });
+        Swal.fire({
+          showConfirmButton: false,
+          timer: 2000,
+          title: "Login Successful",
+          icon: "success",
+        });
         // const userInfo = {
         //   name: signInUser.displayName,
         //   email: signInUser.email,

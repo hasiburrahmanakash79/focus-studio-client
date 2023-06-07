@@ -1,0 +1,162 @@
+[
+  {
+    "id": 12827634,
+    "name": "Portrait Photography",
+    "image": "https://example.com/portrait.jpg",
+    "instructor_name": "John Smith",
+    "available_seat": 15,
+    "price": 99
+  },
+  {
+    "id": 87462391,
+    "name": "Landscape Photography",
+    "image": "https://example.com/landscape.jpg",
+    "instructor_name": "Emily Johnson",
+    "available_seat": 10,
+    "price": 149
+  },
+  {
+    "id": 56293041,
+    "name": "Street Photography",
+    "image": "https://example.com/street.jpg",
+    "instructor_name": "Michael Brown",
+    "available_seat": 12,
+    "price": 129
+  },
+  {
+    "id": 42987563,
+    "name": "Wildlife Photography",
+    "image": "https://example.com/wildlife.jpg",
+    "instructor_name": "Sarah Davis",
+    "available_seat": 8,
+    "price": 199
+  },
+  {
+    "id": 78459127,
+    "name": "Fashion Photography",
+    "image": "https://example.com/fashion.jpg",
+    "instructor_name": "Alex Thompson",
+    "available_seat": 20,
+    "price": 79
+  },
+  {
+    "id": 96328574,
+    "name": "Food Photography",
+    "image": "https://example.com/food.jpg",
+    "instructor_name": "Olivia Anderson",
+    "available_seat": 5,
+    "price": 249
+  },
+  {
+    "id": 31849572,
+    "name": "Sports Photography",
+    "image": "https://example.com/sports.jpg",
+    "instructor_name": "Daniel Wilson",
+    "available_seat": 10,
+    "price": 149
+  },
+  {
+    "id": 57283641,
+    "name": "Macro Photography",
+    "image": "https://example.com/macro.jpg",
+    "instructor_name": "Sophia Martinez",
+    "available_seat": 15,
+    "price": 109
+  },
+  {
+    "id": 96104732,
+    "name": "Astrophotography",
+    "image": "https://example.com/astro.jpg",
+    "instructor_name": "David Lee",
+    "available_seat": 6,
+    "price": 189
+  },
+  {
+    "id": 10587362,
+    "name": "Black and White Photography",
+    "image": "https://example.com/bw.jpg",
+    "instructor_name": "Emma White",
+    "available_seat": 12,
+    "price": 139
+  },
+  {
+    "id": 43276192,
+    "name": "Wedding Photography",
+    "image": "https://example.com/wedding.jpg",
+    "instructor_name": "James Wilson",
+    "available_seat": 10,
+    "price": 199
+  },
+  {
+    "id": 87923516,
+    "name": "Product Photography",
+    "image": "https://example.com/product.jpg",
+    "instructor_name": "Jessica Thompson",
+    "available_seat": 8,
+    "price": 129
+  },
+  {
+    "id": 63287495,
+    "name": "Aerial Photography",
+    "image": "https://example.com/aerial.jpg",
+    "instructor_name": "Ryan Davis",
+    "available_seat": 15,
+    "price": 149
+  },
+  {
+    "id": 45628793,
+    "name": "Documentary Photography",
+    "image": "https://example.com/documentary.jpg",
+    "instructor_name": "Sophie Anderson",
+    "available_seat": 12,
+    "price": 119
+  },
+  {
+    "id": 87359124,
+    "name": "Fashion Editorial Photography",
+    "image": "https://example.com/fashion-editorial.jpg",
+    "instructor_name": "Noah Roberts",
+    "available_seat": 10,
+    "price": 179
+  },
+  {
+    "id": 24958736,
+    "name": "Architectural Photography",
+    "image": "https://example.com/architectural.jpg",
+    "instructor_name": "Ava Davis",
+    "available_seat": 8,
+    "price": 139
+  },
+  {
+    "id": 73648125,
+    "name": "Night Photography",
+    "image": "https://example.com/night.jpg",
+    "instructor_name": "Ethan Wilson",
+    "available_seat": 10,
+    "price": 99
+  },
+  {
+    "id": 93567214,
+    "name": "Fine Art Photography",
+    "image": "https://example.com/fine-art.jpg",
+    "instructor_name": "Lily Johnson",
+    "available_seat": 15,
+    "price": 149
+  },
+  {
+    "id": 14587692,
+    "name": "Travel Photography",
+    "image": "https://example.com/travel.jpg",
+    "instructor_name": "Mia Thompson",
+    "available_seat": 12,
+    "price": 119
+  },
+  {
+    "id": 68724935,
+    "name": "Underwater Photography",
+    "image": "https://example.com/underwater.jpg",
+    "instructor_name": "Henry Davis",
+    "available_seat": 8,
+    "price": 199
+  }
+]
