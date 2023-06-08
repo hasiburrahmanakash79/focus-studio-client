@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 const SignUp = () => {
   useTitle('SignUp')  
   const [passShow, setPassShow] = useState(false);
-  const { signUpUser } = useContext(AuthContext);
+  const { signUpUser, updateUserInfo } = useContext(AuthContext);
 
   
   const navigate = useNavigate();
@@ -27,40 +27,35 @@ const SignUp = () => {
     signUpUser(data.email, data.password)
     .then(result => {
       const loggedUser = result.user;
-      console.log(loggedUser);
       navigate(from, { replace: true });
-        Swal.fire({
-          showConfirmButton: false,
-          timer: 2000,
-          title: "Login Successful",
-          icon: "success",
-        });
+      console.log(loggedUser);
 
-      // updateUserInfo(data.name, data.photo)
-      //     .then(() => {
-      //       const userInfo = { name: data.name, email: data.email };
-      //       fetch("http://localhost:5000/users", {
-      //         method: "POST",
-      //         headers: {
-      //           "content-type": "application/json",
-      //         },
-      //         body: JSON.stringify(userInfo),
-      //       })
-      //         .then((res) => res.json())
-      //         .then((data) => {
-      //           console.log(data);
-      //           if (data.insertedId) {
-      //             navigate(from, { replace: true });
-      //             Swal.fire({
-      //               showConfirmButton: false,
-      //               timer: 2000,
-      //               title: "Login Successful",
-      //               icon: "success",
-      //             });
-      //           }
-      //         });
-      //     })
-      //     .catch((error) => console.log(error.message));
+      updateUserInfo(data.name, data.photo)
+          .then(() => {
+            const userInfo = { displayName: data.name, email: data.email, photoURL: data.photo, number: data.number, address: data.address};
+            console.log("updateUserInfo", userInfo);
+            fetch("http://localhost:5000/users", {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(userInfo),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                console.log(data);
+                if (data.insertedId) {
+                  navigate(from, { replace: true });
+                  Swal.fire({
+                    showConfirmButton: false,
+                    timer: 2000,
+                    title: "Login Successful",
+                    icon: "success",
+                  });
+                }
+              });
+          })
+          .catch((error) => console.log(error.message));
     })
   };
 

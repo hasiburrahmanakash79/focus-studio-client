@@ -6,6 +6,7 @@ import Home from "../Pages/HomeSection/Home/Home";
 import AllClasses from "../Pages/AllClasses/AllClasses";
 import About from "../Pages/About/About";
 import Dashboard from "../Layouts/Dashboard";
+import Contact from "../Pages/Dashboard/Contact";
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,12 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard></Dashboard>,
-    
+    children: [
+      {
+        path: "contact",
+        element: <Contact></Contact>
+      }
+    ]
   }
 ]);
 

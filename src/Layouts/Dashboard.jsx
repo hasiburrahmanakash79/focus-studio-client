@@ -3,7 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
 
-    const isAdmin = false
+    const isAdmin = true
 
   return (
     <div>
@@ -11,7 +11,7 @@ const Dashboard = () => {
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
           {/* Page content here */}
-          {/* <Outlet></Outlet> */}
+          <Outlet></Outlet>
           <label
             htmlFor="my-drawer"
             className="btn btn-primary drawer-button lg:hidden"
@@ -64,12 +64,12 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink to="/dashboard/myCart">
-                  <FcApproval></FcApproval> My Selected Classes
+                  <FcApproval></FcApproval> Selected Classes
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/">
-                  <FcApprove></FcApprove> My Enrolled  Classes
+                  <FcApprove></FcApprove> Enrolled  Classes
                   </NavLink>
                 </li>
                 <li>
@@ -96,7 +96,7 @@ const Dashboard = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/">
+              <NavLink to="/dashboard/contact">
                 <FcContacts></FcContacts> Contact
               </NavLink>
             </li>
