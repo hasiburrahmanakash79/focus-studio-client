@@ -18,13 +18,14 @@ const AllClasses = () => {
             </div>
           </div>
           <div className="">
-            <h1 className="text-2xl font-semibold">kasjdhkas</h1>
+            <h1 className="text-2xl font-semibold">Composition Techniques</h1>
+            <p>Instructor name: </p>
+            <p>Available seats: </p>
             <p>Price: </p>
-            <p>Rating: </p>
           </div>
           <div className="text-end">
           <Link>
-              <button className="btn bg-black btn-sm my-3">View Details</button>
+              <button className="btn btn-sm my-3">Select Class</button>
             </Link>
           </div>
         </div>
