@@ -1,11 +1,14 @@
 import { FcClapperboard, FcBusinessman, FcAddDatabase, FcCamera, FcHome, FcApprove, FcBookmark,  FcContacts, FcLike, FcCurrencyExchange, FcApproval } from "react-icons/fc";
 import { NavLink, Outlet } from "react-router-dom";
 import useTitle from "../Hook/useTitle";
+import useAdmin from "../Hook/useAdmin";
 
 const Dashboard = () => {
   useTitle('Dashboard')
 
-    const isAdmin = true
+  const [isAdmin] = useAdmin()
+
+    // const isAdmin = false
 
   return (
     <div>
