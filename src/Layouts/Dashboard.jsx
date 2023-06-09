@@ -5,10 +5,7 @@ import useAdmin from "../Hook/useAdmin";
 
 const Dashboard = () => {
   useTitle('Dashboard')
-
   const [isAdmin] = useAdmin()
-
-    // const isAdmin = false
 
   return (
     <div>
@@ -59,7 +56,7 @@ const Dashboard = () => {
             ) : (
               <>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/dashboard/useProfile">
                     <FcHome></FcHome> User Home
                   </NavLink>
                 </li>

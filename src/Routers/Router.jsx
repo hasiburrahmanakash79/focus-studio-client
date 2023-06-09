@@ -11,6 +11,7 @@ import AllInstructors from "../Pages/AllInstructors/AllInstructors";
 import AllUsers from "../Pages/Dashboard/AdminDashboard/AllUsers";
 import PrivateRoute from "./PrivateRoute";
 import SelectedClasses from "../Pages/Dashboard/UserDashboard/SelectedClasses";
+import UserProfile from "../Pages/Dashboard/UserDashboard/UserProfile";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "selected",
         element: <SelectedClasses></SelectedClasses>
+      },
+      {
+        path: "useProfile",
+        element: <UserProfile></UserProfile>
       }
     ]
   }

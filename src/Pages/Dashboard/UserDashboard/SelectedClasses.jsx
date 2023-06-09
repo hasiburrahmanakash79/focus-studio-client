@@ -8,7 +8,6 @@ const SelectedClasses = () => {
   const [classes, refetch] = useAddToCart();
 
   const handDeleteClass = (selected) => {
-    console.log(selected._id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -24,10 +23,9 @@ const SelectedClasses = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            //   console.log(data);
             refetch();
             if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              Swal.fire("Deleted!", "Your selected class has been deleted.", "success");
             }
           });
       }
