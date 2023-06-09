@@ -64,12 +64,12 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/myCart">
+                  <NavLink to="/dashboard/selected">
                   <FcApproval></FcApproval> Selected Classes
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/dashboard/myClass">
                   <FcApprove></FcApprove> Enrolled  Classes
                   </NavLink>
                 </li>

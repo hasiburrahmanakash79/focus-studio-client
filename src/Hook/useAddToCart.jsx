@@ -7,7 +7,7 @@ const useAddToCart = () => {
     const {user,loading} = useContext(AuthContext)
     const [axiosSecure] = useAxiosSecure();
 
-    const { refetch, data: cart = [] } = useQuery({
+    const { refetch, data: classes = [] } = useQuery({
         queryKey: ['carts', user?.email],
         enabled: !loading,
         queryFn: async () =>{
@@ -15,7 +15,7 @@ const useAddToCart = () => {
             return res.data;
         },
       })
-      return [cart, refetch]
+      return [classes, refetch]
 };
 
 export default useAddToCart;

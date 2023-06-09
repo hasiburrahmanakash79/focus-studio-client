@@ -10,6 +10,7 @@ import Contact from "../Pages/Dashboard/Contact";
 import AllInstructors from "../Pages/AllInstructors/AllInstructors";
 import AllUsers from "../Pages/Dashboard/AdminDashboard/AllUsers";
 import PrivateRoute from "./PrivateRoute";
+import SelectedClasses from "../Pages/Dashboard/UserDashboard/SelectedClasses";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "allUser",
         element: <AllUsers></AllUsers>
+      },
+      {
+        path: "selected",
+        element: <SelectedClasses></SelectedClasses>
       }
     ]
   }
