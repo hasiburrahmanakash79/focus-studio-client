@@ -7,6 +7,9 @@ import AllClasses from "../Pages/AllClasses/AllClasses";
 import About from "../Pages/About/About";
 import Dashboard from "../Layouts/Dashboard";
 import Contact from "../Pages/Dashboard/Contact";
+import AllInstructors from "../Pages/AllInstructors/AllInstructors";
+import AllUsers from "../Pages/Dashboard/AdminDashboard/AllUsers";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path: "/instructor",
+        element: <AllInstructors></AllInstructors>
       },
       {
         path: "/classes",
@@ -37,11 +44,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children: [
       {
         path: "contact",
         element: <Contact></Contact>
+      },
+      {
+        path: "allUser",
+        element: <AllUsers></AllUsers>
       }
     ]
   }

@@ -1,4 +1,4 @@
-import { FcClapperboard, FcBusinessman, FcAddDatabase, FcCamera, FcHome, FcApprove, FcBookmark, FcConferenceCall, FcContacts, FcLike, FcCurrencyExchange, FcApproval } from "react-icons/fc";
+import { FcClapperboard, FcBusinessman, FcAddDatabase, FcCamera, FcHome, FcApprove, FcBookmark,  FcContacts, FcLike, FcCurrencyExchange, FcApproval } from "react-icons/fc";
 import { NavLink, Outlet } from "react-router-dom";
 import useTitle from "../Hook/useTitle";
 
@@ -47,15 +47,11 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/dashboard/allUser">
                     <FcBusinessman></FcBusinessman> Manage Users
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink to="/dashboard/allUser">
-                    <FcConferenceCall></FcConferenceCall> All User
-                  </NavLink>
-                </li>
+                
               </>
             ) : (
               <>

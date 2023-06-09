@@ -1,162 +1,102 @@
 [
   {
-    "name": "Portrait Photography",
-    "image": "https://www.rangefinderonline.com/wp-content/uploads/2021/08/B23A9251-Edit.jpg",
-    "instructor_name": "John Smith",
-    "available_seat": 15,
-    "price": 99,
-    "category": "Popular"
+    "name": "Emily Johnson",
+    "id": "783ert2h23h32g",
+    "image": "https://images.squarespace-cdn.com/content/v1/59d55d412aeba54362e00bb1/1547328988541-D732YCKXID8578E23KGT/_DSC7599ashleebrookecrop.jpg?format=1000w",
+    "email": "emily.johnson@example.com",
+    "classesTaken": 15,
+    "popularClassName": "Landscape Photography",
+    "category": "popular",
+    "numberOfStudents": 25
   },
   {
-    "name": "Landscape Photography",
-    "image": "https://www.adorama.com/alc/wp-content/uploads/2018/11/landscape-photography-tips-yosemite-valley-feature-1280x720.jpg",
-    "instructor_name": "Emily Johnson",
-    "available_seat": 10,
-    "price": 149,
-    "category": "Bestsellers"
+    "name": "John Smith",
+    "id": "7h8fh9gdf9g7df9",
+    "image": "https://st2.depositphotos.com/1000423/9255/i/600/depositphotos_92556060-stock-photo-male-photographer-taking-picture.jpg",
+    "email": "smith@example.com",
+    "classesTaken": 8,
+    "popularClassName": "Portrait Photography",
+    "category": "popular",
+    "numberOfStudents": 12
   },
   {
-    "name": "Street Photography",
-    "image": "https://www.mappingmegan.com/wp-content/uploads/2017/06/pexels-photo-307847.jpg",
-    "instructor_name": "Michael Brown",
-    "available_seat": 12,
-    "price": 129,
-    "category": "TrendingNow"
+    "name": "David Lee",
+    "id": "89fh78s9f89s7d9",
+    "image": "https://us.123rf.com/450wm/photosvit/photosvit1909/photosvit190902903/129457955-content-creator-man-bearded-hipster-photographer-man-shooting-photos-old-but-still-good-manual.jpg?ver=6",
+    "email": "lee.david@example.com",
+    "classesTaken": 12,
+    "popularClassName": "Astrophotography",
+    "category": "popular",
+    "numberOfStudents": 18
   },
   {
-    "name": "Wildlife Photography",
-    "image": "https://cdn.naturettl.com/wp-content/uploads/2017/07/22013347/start-here-lead-800x534.jpg?p=8676",
-    "instructor_name": "Sarah Davis",
-    "available_seat": 8,
-    "price": 199,
-    "category": "Bestsellers"
+    "name": "James Wilson",
+    "id": "5h5j6g45hgfhg4",
+    "image": "https://media.istockphoto.com/id/610744966/photo/portrait-of-photographer-taking-picture-outdoor.jpg?s=170667a&w=0&k=20&c=_w0XlZq5sUN3v1tasNfRl0-TRMrE6liELH8exXeO7l8=",
+    "email": "james.wilson@example.com",
+    "classesTaken": 20,
+    "popularClassName": "Wedding Photography",
+    "category": "popular",
+    "numberOfStudents": 30
   },
   {
-    "name": "Fashion Photography",
-    "image": "https://vinesoftheyarravalley.com.au/wp-content/uploads/2021/08/Fashion-Photography-1.jpg",
-    "instructor_name": "Alex Thompson",
-    "available_seat": 20,
-    "price": 79,
-    "category": "Popular"
+    "name": "Michael Brown",
+    "id": "1g2h3j4k5l6z7x8",
+    "image": "https://d2ajlz7o3p8ddv.cloudfront.net/media/user_profile/Karthik%20Profile_2767_Karthik.jpg",
+    "email": "Brown.Michael@example.com",
+    "classesTaken": 10,
+    "popularClassName": "Street Photography",
+    "category": "popular",
+    "numberOfStudents": 20
   },
   {
-    "name": "Food Photography",
-    "image": "https://d39l2hkdp2esp1.cloudfront.net/img/photo/165037/165037_00_2x.jpg",
-    "instructor_name": "Olivia Anderson",
-    "available_seat": 5,
-    "price": 249,
-    "category": "Bestsellers"
+    "name": "Sarah Davis",
+    "id": "0o9i8u7y6t5r4e3",
+    "image": "https://www.1854.photography/wp-content/uploads/2020/11/Amy-Vitale-BJP-8-scaled.jpg",
+    "email": "Sarah.Davis@example.com",
+    "classesTaken": 18,
+    "popularClassName": "Wildlife Photography",
+    "category": "popular",
+    "numberOfStudents": 15
   },
   {
-    "name": "Sports Photography",
-    "image": "https://i0.wp.com/www.jobsinsports.com/blog/wp-content/uploads/2021/08/How-to-become-a-sports-photographer-Featured-Jobs-In-Sports.jpg?fit=1000%2C563&ssl=1",
-    "instructor_name": "Daniel Wilson",
-    "available_seat": 10,
-    "price": 149,
-    "category": "TrendingNow"
+    "name": "Alex Thompson",
+    "id": "3e4r5t6y7u8i9o0",
+    "image": "https://images.squarespace-cdn.com/content/v1/62be9869d1c1493be2a65589/1656658218591-Q01PCNQ3YIY87E6B4PLS/Eliana+profile.png?format=1000w",
+    "email": "Thompson.Alex@example.com",
+    "classesTaken": 5,
+    "popularClassName": "Fashion Photography",
+    "category": "popular",
+    "numberOfStudents": 8
   },
   {
-    "name": "Macro Photography",
-    "image": "https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2021/10/Summer-Butterfly-1.jpg?w=750",
-    "instructor_name": "Sophia Martinez",
-    "available_seat": 15,
-    "price": 109,
-    "category": "Popular"
+    "name": "Olivia Anderson",
+    "id": "2s3d4f5g6h7j8k9",
+    "image": "https://cdn.shoutoutarizona.com/wp-content/uploads/2021/02/c-PersonalRubySandoval__horizontal_headshot_1611795038629.jpg",
+    "email": "Anderson.Olivia@example.com",
+    "classesTaken": 14,
+    "popularClassName": "Food Photography",
+    "category": "popular",
+    "numberOfStudents": 22
   },
   {
-    "name": "Astrophotography",
-    "image": "https://images.immediate.co.uk/production/volatile/sites/25/2021/03/astrophotography-beginner-guide-8724622-e1631797878243.jpg?quality=90&resize=921,614",
-    "instructor_name": "David Lee",
-    "available_seat": 6,
-    "price": 189,
-    "category": "Bestsellers"
+    "name": "Daniel Wilson",
+    "id": "6g5f4d3s2a1q2w3",
+    "image": "https://st.depositphotos.com/1075946/3896/i/600/depositphotos_38965117-stock-photo-photographer-taking-picture.jpg",
+    "email": "Daniel.Wilson@example.com",
+    "classesTaken": 9,
+    "popularClassName": "Sports Photography",
+    "category": "simple",
+    "numberOfStudents": 10
   },
   {
-    "name": "Black and White",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ6GeXLppb9CojKs_dqp1H78De1PPY3wtChw&usqp=CAU",
-    "instructor_name": "Emma White",
-    "available_seat": 12,
-    "price": 139,
-    "category": "Popular"
-  },
-  {
-    "name": "Wedding Photography",
-    "image": "https://www.brides.com/thmb/xUIcv90P2RmUwIve6qsg0StAlqg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/photographer-256777efbd374c3d99871a03d799c332.jpg",
-    "instructor_name": "James Wilson",
-    "available_seat": 10,
-    "price": 199,
-    "category": "TrendingNow"
-  },
-  {
-    "name": "Product Photography",
-    "image": "https://broncolor.swiss/assets/img/Learn-articles/Ecommerce/Versatile-Lighting-Setup-for-your-Webshop-in-Ecommerce/_contentWithShareBar23/The-Ultimate-Product-Photography-Lighting-Setup.png",
-    "instructor_name": "Jessica Thompson",
-    "available_seat": 8,
-    "price": 129,
-    "category": "Popular"
-  },
-  {
-    "name": "Aerial Photography",
-    "image": "https://aerialphoto.in/wp-content/uploads/2016/12/aerial-photography-in-india-drone-image.jpg",
-    "instructor_name": "Ryan Davis",
-    "available_seat": 15,
-    "price": 149,
-    "category": "Bestsellers"
-  },
-  {
-    "name": "Documentary Photography",
-    "image": "https://www.city-academy.com/news/wp-content/uploads/2016/08/don_mccullin_smaller-copy-930x551.jpg",
-    "instructor_name": "Sophie Anderson",
-    "available_seat": 12,
-    "price": 119,
-    "category": "Popular"
-  },
-  {
-    "name": "Fashion Editorial Photography",
-    "image": "https://www.bwillcreative.com/wp-content/uploads/2021/04/hobbyist-vs-professional-photographer2.jpg",
-    "instructor_name": "Noah Roberts",
-    "available_seat": 10,
-    "price": 179,
-    "category": "TrendingNow"
-  },
-  {
-    "name": "Architectural Photography",
-    "image": "https://www.colesclassroom.com/wp-content/uploads/2017/11/ARCHITECTURAL-7-of-7.jpg",
-    "instructor_name": "Ava Davis",
-    "available_seat": 8,
-    "price": 139,
-    "category": "TrendingNow"
-  },
-  {
-    "name": "Night Photography",
-    "image": "https://www.format.com/wp-content/uploads/light-trails-in-china-town-1.jpg",
-    "instructor_name": "Ethan Wilson",
-    "available_seat": 10,
-    "price": 99,
-    "category": "Popular"
-  },
-  {
-    "name": "Fine Art Photography",
-    "image": "https://i.pinimg.com/originals/8e/00/c2/8e00c211ab038a8d4db2da345ece7bcd.jpg",
-    "instructor_name": "Lily Johnson",
-    "available_seat": 15,
-    "price": 149,
-    "category": "TrendingNow"
-  },
-  {
-    "name": "Travel Photography",
-    "image": "https://blog-6aa0.kxcdn.com/wp-content/uploads/2017/04/Travel-Photography.jpg",
-    "instructor_name": "Mia Thompson",
-    "available_seat": 12,
-    "price": 119,
-    "category": "Bestsellers"
-  },
-  {
-    "name": "Underwater Photography",
-    "image": "https://texasscubaacademy.com/wp-content/uploads/2022/12/DUP2-1KVSmX4W.jpg",
-    "instructor_name": "Henry Davis",
-    "available_seat": 8,
-    "price": 199,
-    "category": "TrendingNow"
+    "name": "Sophia Martinez",
+    "id": "b1v2n3m4k5l6j7",
+    "image": "https://comeplum.com/wp-content/uploads/2018/07/My-Phot-Kit_Praise-Santos-_ComePlum-3.jpg",
+    "email": "Sophia.Martinez@example.com",
+    "classesTaken": 22,
+    "popularClassName": "Macro Photography",
+    "category": "popular",
+    "numberOfStudents": 35
   }
 ]
