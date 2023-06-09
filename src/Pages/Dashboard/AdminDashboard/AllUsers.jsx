@@ -54,7 +54,7 @@ const AllUsers = () => {
         subTitle={"Happy user"}
         title={"manage user"}
       ></SectionTitle>
-      <div className="overflow-x-auto">
+        <div className="overflow-x-auto">
         <table className="table w-full">
           {/* head */}
           <thead className="bg-slate-200">
@@ -70,17 +70,17 @@ const AllUsers = () => {
           </thead>
           <tbody>
             {users.map((user, index) => (
-              <tr key={user._id}>
+              <tr key={user?._id}>
                 <th>{index + 1}</th>
                 <th>
                   <div className="avatar online">
                     <div className="w-10 border-2 border-green-600 rounded-full">
-                      <img src={user.photoURL} />
+                      <img src={user?.photoURL} />
                     </div>
                   </div>
                 </th>
-                <td>{user.displayName}</td>
-                <td>{user.email}</td>
+                <td>{user?.displayName}</td>
+                <td>{user?.email}</td>
                 <td>
                   {user.role === "admin" ? (
                     "ADMIN"
