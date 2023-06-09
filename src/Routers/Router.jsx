@@ -12,6 +12,7 @@ import AllUsers from "../Pages/Dashboard/AdminDashboard/AllUsers";
 import PrivateRoute from "./PrivateRoute";
 import SelectedClasses from "../Pages/Dashboard/UserDashboard/SelectedClasses";
 import UserProfile from "../Pages/Dashboard/UserDashboard/UserProfile";
+import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
         element: <UserProfile></UserProfile>
       }
     ]
+  },
+  {
+    path: "*",
+    element: <PageNotFound></PageNotFound>
   }
 ]);
 
