@@ -56,7 +56,7 @@ const Footer = () => {
           <p className="link link-hover">Cookie policy</p>
         </div>
         <div>
-          <span className="footer-title">Address</span>
+          <p className="footer-title">Address</p>
           <p className="link link-hover">Dhanmondi-32, Shongkor, Dhaka</p>
           <p className="link link-hover">+777 5654 6565</p>
           <p className="link link-hover">focusStudioAcademy@web.com</p>

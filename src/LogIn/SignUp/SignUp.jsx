@@ -32,8 +32,7 @@ const SignUp = () => {
 
       updateUserInfo(data.name, data.photo)
           .then(() => {
-            const userInfo = { displayName: data.name, email: data.email, photoURL: data.photo, number: data.number, address: data.address};
-            console.log("updateUserInfo", userInfo);
+            const userInfo = { displayName: data.name, email: data.email, photoURL: data.photo};
             fetch("http://localhost:5000/users", {
               method: "POST",
               headers: {
@@ -43,7 +42,6 @@ const SignUp = () => {
             })
               .then((res) => res.json())
               .then((data) => {
-                console.log(data);
                 if (data.insertedId) {
                   navigate(from, { replace: true });
                   Swal.fire({

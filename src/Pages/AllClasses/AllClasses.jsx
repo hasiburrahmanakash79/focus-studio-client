@@ -1,8 +1,20 @@
-import { Link } from "react-router-dom";
+
 import useTitle from "../../Hook/useTitle";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import useClasses from "../../Hook/useClasses";
+import ClassDetails from "./ClassDetails";
+import { useState } from "react";
 const AllClasses = () => {
   useTitle("All Classes");
+  const [seeMore, setSeeMore] = useState(false);
+  const [displayCount, setDisplayCount] = useState(8);
+
+  const [classes] = useClasses()
+
+  const handleSeeMore = () => {
+    setSeeMore(true);
+    setDisplayCount(classes.length);
+  }
 
   return (
     <div className="pt-24">
@@ -10,25 +22,18 @@ const AllClasses = () => {
         title={"All Classes"}
         subTitle={"Make Your Dream"}
       ></SectionTitle>
+      <h1 className="md:text-4xl text-2xl text-center font-semibold">Our Total paid tutorial is {classes.length}</h1>
       <div className="md:grid grid-cols-4 gap-5 py-5">
-        <div className="border p-3 rounded-md hover:border-yellow-300">
-          <div className="avatar">
-            <div className="w-full rounded">
-              <img src="https://images.pexels.com/photos/821749/pexels-photo-821749.jpeg?cs=srgb&dl=pexels-alex-andrews-821749.jpg&fm=jpg" />
-            </div>
-          </div>
-          <div className="">
-            <h1 className="text-2xl font-semibold">Composition Techniques</h1>
-            <p>Instructor name: </p>
-            <p>Available seats: </p>
-            <p>Price: </p>
-          </div>
-          <div className="text-end">
-          <Link>
-              <button className="btn btn-sm my-3">Select Class</button>
-            </Link>
-          </div>
-        </div>
+        {
+          classes.slice(0, displayCount).map(tutorial => <ClassDetails key={tutorial._id} tutorial={tutorial}></ClassDetails>)
+        }
+      </div>
+      <div className="text-center my-5">
+        {!seeMore && (
+          <button onClick={handleSeeMore} className="btn btn-primary btn-outline">
+            See More classes
+          </button>
+        )}
       </div>
     </div>
   );

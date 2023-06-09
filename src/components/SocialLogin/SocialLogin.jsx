@@ -16,36 +16,29 @@ const SocialLogin = () => {
     googleSignIn()
       .then((result) => {
         const signInUser = result.user;
-        console.log(signInUser);
-        
-        navigate(from, { replace: true });
-        Swal.fire({
-          showConfirmButton: false,
-          timer: 2000,
-          title: "Login Successful",
-          icon: "success",
-        });
-        // const userInfo = {
-        //   name: signInUser.displayName,
-        //   email: signInUser.email,
-        // };
-        // fetch("http://localhost:5000/users", {
-        //   method: "POST",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify(userInfo),
-        // })
-        //   .then((res) => res.json())
-        //   .then(() => {
-        //     navigate(from, { replace: true });
-        //     Swal.fire({
-        //       showConfirmButton: false,
-        //       timer: 2000,
-        //       title: "Login Successful",
-        //       icon: "success",
-        //     });
-        //   });
+
+        const userInfo = {
+          displayName: signInUser.displayName,
+          email: signInUser.email,
+          photoURL: signInUser.photoURL
+        };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userInfo),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            navigate(from, { replace: true });
+            Swal.fire({
+              showConfirmButton: false,
+              timer: 2000,
+              title: "Login Successful",
+              icon: "success",
+            });
+          });
       })
       .catch((error) => console.log(error));
   };
