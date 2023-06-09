@@ -12,7 +12,7 @@ const PhotoGallery = () => {
         </div>
         <div className="avatar">
           <div className="w-full rounded">
-            <img src="https://www.earthtouchnews.com/media/1952818/hannah-vijayan-wildlife-photographer-of-the-year-bear-fish_page_2020-09-02.jpg" />
+            <img src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2lsZGxpZmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" />
           </div>
         </div>
         <div className="avatar">

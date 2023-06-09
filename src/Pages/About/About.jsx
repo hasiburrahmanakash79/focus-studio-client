@@ -2,17 +2,17 @@ import useTitle from "../../Hook/useTitle";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 
 const About = () => {
-  useTitle('About')
+  useTitle("About");
 
   return (
     <div className="pt-24">
-        <SectionTitle title={"about"}></SectionTitle>
+      <SectionTitle title={"about"}></SectionTitle>
       <div className="md:flex items-center justify-center p-5 gap-10 ">
         <div className="md:w-1/2 mb-3">
           <img
             src="https://i.ibb.co/TqNnpjX/Logo-SILVER.png"
             className="w-32 "
-            alt=""
+            data-aos="zoom-in"
           />
           <h1 className="text-3xl font-semibold border-l-8 border-x-slate-400 p-3 my-5">
             Focus Studio
@@ -39,7 +39,9 @@ const About = () => {
           <img
             className="rounded-md shadow-xl"
             src="https://i.ibb.co/tZsnTLm/about.jpg"
-            alt=""
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
           />
         </div>
       </div>
