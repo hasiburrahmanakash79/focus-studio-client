@@ -13,6 +13,8 @@ import PrivateRoute from "./PrivateRoute";
 import SelectedClasses from "../Pages/Dashboard/UserDashboard/SelectedClasses";
 import UserProfile from "../Pages/Dashboard/UserDashboard/UserProfile";
 import PageNotFound from "../Pages/PageNotFound/PageNotFound";
+import AdminRoute from "./AdminRoute";
+import AddClass from "../Pages/Dashboard/InstructorDashboard/AddClass";
 
 const router = createBrowserRouter([
   {
@@ -55,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: "allUser",
-        element: <AllUsers></AllUsers>
+        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
       },
       {
         path: "selected",
@@ -64,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "useProfile",
         element: <UserProfile></UserProfile>
+      },
+      {
+        path: "addClass",
+        element: <AddClass></AddClass>
       }
     ]
   },

@@ -1,11 +1,25 @@
-import { FcClapperboard, FcBusinessman, FcAddDatabase, FcCamera, FcHome, FcApprove, FcBookmark,  FcContacts, FcLike, FcCurrencyExchange, FcApproval } from "react-icons/fc";
+import {
+  FcClapperboard,
+  FcBusinessman,
+  FcAddDatabase,
+  FcCamera,
+  FcHome,
+  FcApprove,
+  FcBookmark,
+  FcContacts,
+  FcLike,
+  FcCurrencyExchange,
+  FcApproval,
+} from "react-icons/fc";
 import { NavLink, Outlet } from "react-router-dom";
 import useTitle from "../Hook/useTitle";
 import useAdmin from "../Hook/useAdmin";
+import useRoleInstructor from "../Hook/useRoleInstructor";
 
 const Dashboard = () => {
-  useTitle('Dashboard')
-  const [isAdmin] = useAdmin()
+  useTitle("Dashboard");
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useRoleInstructor();
 
   return (
     <div>
@@ -26,19 +40,16 @@ const Dashboard = () => {
           <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
             <div className=" my-6">
-              <h1 className="text-4xl font-semibold flex items-center gap-2">Focus Studio <FcCamera></FcCamera></h1>
+              <h1 className="text-4xl font-semibold flex items-center gap-2">
+                Focus Studio <FcCamera></FcCamera>
+              </h1>
               <p>Best Photography teaching platform</p>
             </div>
-            {isAdmin ? (
+            {isAdmin && (
               <>
                 <li>
                   <NavLink to="/">
                     <FcHome></FcHome> Admin Home
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/addClass">
-                    <FcAddDatabase></FcAddDatabase> Add Class
                   </NavLink>
                 </li>
                 <li>
@@ -51,9 +62,28 @@ const Dashboard = () => {
                     <FcBusinessman></FcBusinessman> Manage Users
                   </NavLink>
                 </li>
-                
               </>
-            ) : (
+            )}
+            {isInstructor && (
+              <>
+                <li>
+                  <NavLink to="/">
+                    <FcHome></FcHome> Instructor Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/addClass">
+                    <FcAddDatabase></FcAddDatabase> Add Class
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/">
+                    <FcBookmark></FcBookmark> My Classes
+                  </NavLink>
+                </li>
+              </>
+            )}
+            {!isAdmin && !isInstructor &&(
               <>
                 <li>
                   <NavLink to="/dashboard/useProfile">
@@ -62,12 +92,12 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink to="/dashboard/selected">
-                  <FcApproval></FcApproval> Selected Classes
+                    <FcApproval></FcApproval> Selected Classes
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/myClass">
-                  <FcApprove></FcApprove> Enrolled  Classes
+                    <FcApprove></FcApprove> Enrolled Classes
                   </NavLink>
                 </li>
                 <li>
@@ -76,7 +106,7 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/dashboard/addReview">
                     <FcLike></FcLike> Add Review
                   </NavLink>
                 </li>
