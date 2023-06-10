@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import useAddToCart from "../../../Hook/useAddToCart";
 import useTitle from "../../../Hook/useTitle";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import { Link } from "react-router-dom";
 
 const SelectedClasses = () => {
   useTitle("User Dashboard");
@@ -25,7 +26,11 @@ const SelectedClasses = () => {
           .then((data) => {
             refetch();
             if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your selected class has been deleted.", "success");
+              Swal.fire(
+                "Deleted!",
+                "Your selected class has been deleted.",
+                "success"
+              );
             }
           });
       }
@@ -67,7 +72,9 @@ const SelectedClasses = () => {
                 <td>Instructor Name: {selected?.instructor_name}</td>
                 <td className="text-yellow-600">${selected?.price}</td>
                 <td>
-                  <button className="btn-primary p-2 rounded">Pay</button>
+                  <Link to="/dashboard/payment">
+                    <button className="btn-primary p-2 rounded">Pay</button>
+                  </Link>
                 </td>
                 <td>
                   <button

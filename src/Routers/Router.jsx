@@ -15,6 +15,7 @@ import UserProfile from "../Pages/Dashboard/UserDashboard/UserProfile";
 import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 import AdminRoute from "./AdminRoute";
 import AddClass from "../Pages/Dashboard/InstructorDashboard/AddClass";
+import Payment from "../Pages/Dashboard/UserDashboard/Payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -23,60 +24,72 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
         path: "/instructor",
-        element: <AllInstructors></AllInstructors>
+        element: <AllInstructors></AllInstructors>,
       },
       {
         path: "/classes",
-        element: <AllClasses></AllClasses>
+        element: <AllClasses></AllClasses>,
       },
       {
         path: "/about",
-        element: <About></About>
-      }
-    ]
+        element: <About></About>,
+      },
+    ],
   },
   {
     path: "/login",
-    element: <Login></Login>
+    element: <Login></Login>,
   },
   {
     path: "/signUp",
-    element: <SignUp></SignUp>
+    element: <SignUp></SignUp>,
   },
   {
     path: "/dashboard",
-    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "contact",
-        element: <Contact></Contact>
-      },
-      {
-        path: "allUser",
-        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+        element: <Contact></Contact>,
       },
       {
         path: "selected",
-        element: <SelectedClasses></SelectedClasses>
+        element: <SelectedClasses></SelectedClasses>,
       },
       {
-        path: "useProfile",
-        element: <UserProfile></UserProfile>
+        path: "profile",
+        element: <UserProfile></UserProfile>,
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>,
+      },
+      {
+        path: "allUser",
+        element: (
+          <AdminRoute>
+            <AllUsers></AllUsers>
+          </AdminRoute>
+        ),
       },
       {
         path: "addClass",
-        element: <AddClass></AddClass>
-      }
-    ]
+        element: <AddClass></AddClass>,
+      },
+    ],
   },
   {
     path: "*",
-    element: <PageNotFound></PageNotFound>
-  }
+    element: <PageNotFound></PageNotFound>,
+  },
 ]);
 
 export default router;

@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import useAddToCart from "../../Hook/useAddToCart";
 
 const ClassDetails = ({ tutorial }) => {
-  const { name, image, instructor_name, available_seat, price, category, _id } =
+  const { name, image, instructor_name, available_seat, price, _id } =
     tutorial;
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -72,7 +72,6 @@ const ClassDetails = ({ tutorial }) => {
         <p>Instructor name: {instructor_name} </p>
         <p>Available seats: {available_seat} </p>
         <p>Price: ${price} </p>
-        <p>Category: {category} </p>
       </div>
       <div className="text-end">
         <Link>

@@ -2,19 +2,55 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import useTitle from "../../../Hook/useTitle";
+import useAxiosSecure from "../../../Hook/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const AddClass = () => {
+  useTitle("AddClass");
+
   const { user } = useContext(AuthContext);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
+ 
+  const [axiosSecure]= useAxiosSecure()
+  const Image_Hosting_Token = import.meta.env.VITE_image_hosting_apiKey
+
+  const { register, handleSubmit} = useForm();
+
+  const image_hosting_url = `https://api.imgbb.com/1/upload?key=${Image_Hosting_Token}`
+
+  const onSubmit = data => {
+    const formData = new FormData();
+    formData.append('image', data.image[0])
+
+    fetch(image_hosting_url, {
+      method: "POST",
+      body: formData
+    })
+    .then(res => res.json())
+    .then(imageResponse => {
+      if(imageResponse.success){
+        const imgURL = imageResponse.data.display_url;
+        const {name, price, instructor_name, email, available_seat} = data;
+        const addClass = {name, price: parseInt(price), instructor_name, email, available_seat: parseInt(available_seat), image: imgURL}
+        console.log(addClass);
+        axiosSecure.post('/classes', addClass)
+        .then(data => {
+          if(data.data.insertedId){
+            Swal.fire({
+              showConfirmButton: false,
+              timer: 1500,
+              title: "Item added Successful",
+              icon: "success",
+            });
+          }
+        })
+      }
+    })
+  };
 
   return (
     <div className="p-5">
-      <SectionTitle title={'add classes'}></SectionTitle>
+      <SectionTitle title={"add classes"}></SectionTitle>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -31,7 +67,7 @@ const AddClass = () => {
             className="input w-full"
           />
         </div>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="md:grid grid-cols-2 gap-5">
           <div>
             <label className="label">
               <span className="label-text">Instructor Name</span>
@@ -64,7 +100,7 @@ const AddClass = () => {
             </label>
             <input
               {...register("price", { required: true })}
-              type="text"
+              type="number"
               placeholder="Type here"
               className="input w-full"
             />
@@ -75,7 +111,7 @@ const AddClass = () => {
             </label>
             <input
               {...register("available_seat", { required: true })}
-              type="text"
+              type="number"
               placeholder="Type here"
               className="input w-full"
             />
