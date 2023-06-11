@@ -13,7 +13,6 @@ const ClassDetails = ({ tutorial }) => {
   const [, refetch] = useAddToCart()
 
   const handleSelectClass = (tutorial) => {
-    console.log(tutorial);
     if (user && user.email) {
       const addItem = {
         image,
@@ -33,7 +32,6 @@ const ClassDetails = ({ tutorial }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.insertedId) {
             refetch();
             Swal.fire({

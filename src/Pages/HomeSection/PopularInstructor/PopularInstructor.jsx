@@ -7,7 +7,8 @@ const PopularInstructor = () => {
   const PopularInstructors = instructors.filter(
     (instructor) => instructor.category === "popular"
   );
-  console.log(PopularInstructors);
+
+  
   return (
     <div>
       <SectionTitle

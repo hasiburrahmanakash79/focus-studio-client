@@ -32,7 +32,6 @@ const AddClass = () => {
         const imgURL = imageResponse.data.display_url;
         const {name, price, instructor_name, email, available_seat} = data;
         const addClass = {name, price: parseInt(price), instructor_name, email, available_seat: parseInt(available_seat), image: imgURL}
-        console.log(addClass);
         axiosSecure.post('/classes', addClass)
         .then(data => {
           if(data.data.insertedId){

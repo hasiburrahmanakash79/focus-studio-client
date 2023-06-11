@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const SelectedClasses = () => {
   useTitle("User Dashboard");
   const [classes, refetch] = useAddToCart();
+  const totalPrice = classes.reduce((sum, tutorial) => tutorial.price + sum, 0);
 
   const handDeleteClass = (selected) => {
     Swal.fire({
@@ -43,6 +44,15 @@ const SelectedClasses = () => {
         title={"Your Selected Classes"}
         subTitle={"Learn more & more for your future"}
       ></SectionTitle>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold">Total items: {classes.length}</h1>
+        <h1 className="text-2xl font-bold">
+          Total Price: <span className="text-red-600">${totalPrice.toFixed(2)}</span>
+        </h1>
+        <Link to="/dashboard/payment">
+          <button className="btn btn-primary">Pay Now</button>
+        </Link>
+      </div>
       <div className="overflow-x-auto rounded-xl">
         <table className="table w-full">
           {/* head */}
@@ -53,7 +63,6 @@ const SelectedClasses = () => {
               <th>Course Title</th>
               <th>Instructor Name</th>
               <th>Price</th>
-              <th>Payment</th>
               <th>Remove</th>
             </tr>
           </thead>
@@ -71,11 +80,6 @@ const SelectedClasses = () => {
                 <td className="text-lg font-bold">{selected?.name}</td>
                 <td>Instructor Name: {selected?.instructor_name}</td>
                 <td className="text-yellow-600">${selected?.price}</td>
-                <td>
-                  <Link to="/dashboard/payment">
-                    <button className="btn-primary p-2 rounded">Pay</button>
-                  </Link>
-                </td>
                 <td>
                   <button
                     onClick={() => handDeleteClass(selected)}
