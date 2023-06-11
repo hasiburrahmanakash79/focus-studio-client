@@ -13,6 +13,7 @@ const ClassDetails = ({ tutorial }) => {
   const [, refetch] = useAddToCart()
 
   const handleSelectClass = (tutorial) => {
+    console.log(tutorial);
     if (user && user.email) {
       const addItem = {
         image,
@@ -23,7 +24,7 @@ const ClassDetails = ({ tutorial }) => {
         email: user.email,
         id: _id,
       };
-      fetch("http://localhost:5000/carts", {
+      fetch("https://focus-studio-server.vercel.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
