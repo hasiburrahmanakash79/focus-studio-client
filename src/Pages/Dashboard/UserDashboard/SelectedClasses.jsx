@@ -20,7 +20,7 @@ const SelectedClasses = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://focus-studio-server.vercel.app/carts/${selected._id}`, {
+        fetch(`http://localhost:5000/carts/${selected._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -50,9 +50,6 @@ const SelectedClasses = () => {
           Total Price:{" "}
           <span className="text-red-600">${totalPrice.toFixed(2)}</span>
         </h1>
-        <Link to="/dashboard/payment">
-          <button className="btn btn-primary">Pay Now</button>
-        </Link>
       </div>
       <div className="overflow-x-auto rounded-xl">
         <table className="table w-full">

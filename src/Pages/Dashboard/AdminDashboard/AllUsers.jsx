@@ -8,12 +8,12 @@ const AllUsers = () => {
   useTitle("Manage User");
 
   const { data: users = [], refetch } = useQuery(["users"], async () => {
-    const res = await fetch("https://focus-studio-server.vercel.app/users");
+    const res = await fetch("http://localhost:5000/users");
     return res.json();
   });
 
   const handleAdmin = (user) => {
-    fetch(`https://focus-studio-server.vercel.app/users/admin/${user._id}`, {
+    fetch(`http://localhost:5000/users/admin/${user._id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -31,7 +31,7 @@ const AllUsers = () => {
   };
 
   const handleInstructor = (user) => {
-    fetch(`https://focus-studio-server.vercel.app/users/instructor/${user._id}`, {
+    fetch(`http://localhost:5000/users/instructor/${user._id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -47,13 +47,43 @@ const AllUsers = () => {
         }
       });
   };
+
+  const handleDeleteUser = (user) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to remove this user!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/users/${user._id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            refetch();
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                "Deleted!",
+                "User has been deleted.",
+                "success"
+              );
+            }
+          });
+      }
+    });
+  };
+
   return (
     <div className="p-5">
       <SectionTitle
         subTitle={"Happy user"}
         title={"manage user"}
       ></SectionTitle>
-        <div className="overflow-x-auto">
+      <div className="overflow-x-auto">
         <table className="table w-full">
           {/* head */}
           <thead className="bg-slate-200">
@@ -105,7 +135,10 @@ const AllUsers = () => {
                   )}
                 </td>
                 <td>
-                  <button className="text-white bg-red-700 p-2 rounded">
+                  <button
+                    onClick={() => handleDeleteUser(user)}
+                    className="text-white bg-red-700 p-2 rounded"
+                  >
                     <FaTrashAlt></FaTrashAlt>
                   </button>
                 </td>

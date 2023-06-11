@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         element: <SelectedClasses></SelectedClasses>,
       },
       {
-        path: "profile",
+        path: "",
         element: <UserProfile></UserProfile>,
       },
       {

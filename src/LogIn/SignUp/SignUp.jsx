@@ -7,11 +7,11 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const SignUp = () => {
-  useTitle('SignUp')  
+  useTitle("SignUp");
   const [passShow, setPassShow] = useState(false);
   const { signUpUser, updateUserInfo } = useContext(AuthContext);
+  // const [matchPass, setMatchPass] = useState()
 
-  
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -20,40 +20,45 @@ const SignUp = () => {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm();
+  const password = watch("password");
 
   const onSubmit = (data) => {
-    signUpUser(data.email, data.password)
-    .then(result => {
+    signUpUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       navigate(from, { replace: true });
       console.log(loggedUser);
 
       updateUserInfo(data.name, data.photo)
-          .then(() => {
-            const userInfo = { displayName: data.name, email: data.email, photoURL: data.photo};
-            fetch("https://focus-studio-server.vercel.app/users", {
-              method: "POST",
-              headers: {
-                "content-type": "application/json",
-              },
-              body: JSON.stringify(userInfo),
-            })
-              .then((res) => res.json())
-              .then((data) => {
-                if (data.insertedId) {
-                  navigate(from, { replace: true });
-                  Swal.fire({
-                    showConfirmButton: false,
-                    timer: 2000,
-                    title: "Login Successful",
-                    icon: "success",
-                  });
-                }
-              });
+        .then(() => {
+          const userInfo = {
+            displayName: data.name,
+            email: data.email,
+            photoURL: data.photo,
+          };
+          fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(userInfo),
           })
-          .catch((error) => console.log(error.message));
-    })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.insertedId) {
+                navigate(from, { replace: true });
+                Swal.fire({
+                  showConfirmButton: false,
+                  timer: 2000,
+                  title: "Login Successful",
+                  icon: "success",
+                });
+              }
+            });
+        })
+        .catch((error) => console.log(error.message));
+    });
   };
 
   return (
@@ -103,53 +108,53 @@ const SignUp = () => {
                 </label>
                 <input
                   {...register("password", {
-                    required: true,
-                    minLength: 6,
-                    pattern:
-                      /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/,
+                    required: "Password field is required",
+                    minLength: {
+                      value: 6,
+                      message: "Password must be at least 6 characters",
+                    },
+                    pattern: {
+                      value:
+                        /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/,
+                      message:
+                        "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
+                    },
                   })}
                   type={passShow ? "text" : "password"}
-                  placeholder="enter your password"
+                  placeholder="Enter your password"
                   className="input input-bordered"
                 />
                 <label className="label">
-                <a className="label-text-alt link link-hover">
-                  <p onClick={() => setPassShow(!passShow)}>
-                    <small>
-                      {passShow ? (
-                        <span>Hide Pass</span>
-                      ) : (
-                        <span>Show Pass</span>
-                      )}
-                    </small>
-                  </p>
-                </a>
-              </label>
-                {errors.password?.type === "required" && (
-                  <span>Password field is required</span>
-                )}
-                {errors.password?.type === "minLength" && (
-                  <span>Password must be 6 character</span>
-                )}
-                {errors.password?.type === "pattern" && (
-                  <p className="text-red-500">
-                    Password must be one UPPER case. one lower case, one number
-                    & one special character
-                  </p>
-                )}
+                  <a className="label-text-alt link link-hover">
+                    <p onClick={() => setPassShow(!passShow)}>
+                      <small>
+                        {passShow ? (
+                          <span>Hide Pass</span>
+                        ) : (
+                          <span>Show Pass</span>
+                        )}
+                      </small>
+                    </p>
+                  </a>
+                </label>
+                {errors.password && <span>{errors.password.message}</span>}
               </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Confirm Password</span>
                 </label>
                 <input
-                  {...register("confirm", { required: true })}
+                  {...register("confirm", {
+                    required: "Confirm password field is required",
+                    validate: (value) =>
+                      value === password || "Passwords do not match",
+                  })}
                   type={passShow ? "text" : "password"}
                   placeholder="Confirm password"
                   className="input input-bordered"
                 />
-                
-                {errors.confirm && <span>This field is required</span>}
+                {errors.confirm && <span>{errors.confirm.message}</span>}
               </div>
               <div className="form-control">
                 <label className="label">

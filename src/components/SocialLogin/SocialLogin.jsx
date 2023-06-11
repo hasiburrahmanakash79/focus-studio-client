@@ -22,7 +22,7 @@ const SocialLogin = () => {
           email: signInUser.email,
           photoURL: signInUser.photoURL
         };
-        fetch("https://focus-studio-server.vercel.app/users", {
+        fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

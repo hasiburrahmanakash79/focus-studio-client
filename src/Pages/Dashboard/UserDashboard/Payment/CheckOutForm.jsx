@@ -85,7 +85,7 @@ const CheckOutForm = ({ tutorial, price }) => {
             icon: "success",
           });
           const id = tutorial.id;
-          fetch(`https://focus-studio-server.vercel.app/payment_update/${id}`, {
+          fetch(`http://localhost:5000/payment_update/${id}`, {
             method: "PUT",
           })
             .then((res) => {
