@@ -15,9 +15,11 @@ const CheckOutForm = ({ classes, price }) => {
   const [processing, setProcessing] = useState(false);
 
   useEffect(() => {
-    axiosSecure.post("/create-payment-intent", { price }).then((data) => {
-      setClientSecret(data.data.clientSecret);
-    });
+    if (price > 0) {
+      axiosSecure.post("/create-payment-intent", { price }).then((data) => {
+        setClientSecret(data.data.clientSecret);
+      });
+    }
   }, []);
 
   const handleSubmit = async (event) => {
@@ -63,7 +65,7 @@ const CheckOutForm = ({ classes, price }) => {
 
     if (paymentIntent.status === "succeeded") {
       setSuccess(paymentIntent.id);
-      
+
       const payment = {
         email: user?.email,
         transactionId: paymentIntent.id,
