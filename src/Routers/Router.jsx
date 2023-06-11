@@ -16,6 +16,7 @@ import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 import AdminRoute from "./AdminRoute";
 import AddClass from "../Pages/Dashboard/InstructorDashboard/AddClass";
 import Payment from "../Pages/Dashboard/UserDashboard/Payment/Payment";
+import AddReview from "../Pages/Dashboard/UserDashboard/AddReview";
 
 const router = createBrowserRouter([
   {
@@ -65,12 +66,16 @@ const router = createBrowserRouter([
         element: <SelectedClasses></SelectedClasses>,
       },
       {
-        path: "",
+        path: "userProfile",
         element: <UserProfile></UserProfile>,
       },
       {
         path: "payment/:id",
         element: <Payment></Payment>,
+      },
+      {
+        path: "addReview",
+        element: <AddReview></AddReview>
       },
       {
         path: "allUser",

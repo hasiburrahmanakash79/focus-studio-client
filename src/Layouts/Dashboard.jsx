@@ -86,7 +86,7 @@ const Dashboard = () => {
             {!isAdmin && !isInstructor &&(
               <>
                 <li>
-                  <NavLink to="/dashboard">
+                  <NavLink to="/dashboard/userProfile">
                     <FcHome></FcHome> User Home
                   </NavLink>
                 </li>
