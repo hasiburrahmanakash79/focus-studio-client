@@ -4,7 +4,7 @@ import useAxiosSecure from "../../../../Hook/useAxiosSecure";
 import { AuthContext } from "../../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
-const CheckOutForm = ({ classes, price }) => {
+const CheckOutForm = ({ tutorial, price }) => {
   const { user } = useContext(AuthContext);
   const stripe = useStripe();
   const elements = useElements();
@@ -20,7 +20,7 @@ const CheckOutForm = ({ classes, price }) => {
         setClientSecret(data.data.clientSecret);
       });
     }
-  }, []);
+  }, [price, axiosSecure]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -71,9 +71,9 @@ const CheckOutForm = ({ classes, price }) => {
         transactionId: paymentIntent.id,
         price,
         date: new Date(),
-        quantity: classes.length,
-        classID: classes.map((tutorial) => tutorial._id),
-        classNames: classes.map((tutorial) => tutorial.name),
+        quantity: tutorial.length,
+        classID: tutorial._id,
+        classNames: tutorial.name,
       };
       axiosSecure.post("/payments", payment).then((res) => {
         console.log(res.data);
@@ -84,6 +84,14 @@ const CheckOutForm = ({ classes, price }) => {
             title: "Payment Successful",
             icon: "success",
           });
+          const id = tutorial.id;
+          fetch(`http://localhost:5000/payment_update/${id}`, {
+            method: "PUT",
+          })
+            .then((res) => {
+              console.log(res);
+            })
+            
         }
       });
     }

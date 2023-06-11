@@ -32,7 +32,7 @@ const SignUp = () => {
       updateUserInfo(data.name, data.photo)
           .then(() => {
             const userInfo = { displayName: data.name, email: data.email, photoURL: data.photo};
-            fetch("https://focus-studio-server.vercel.app/users", {
+            fetch("http://localhost:5000/users", {
               method: "POST",
               headers: {
                 "content-type": "application/json",
