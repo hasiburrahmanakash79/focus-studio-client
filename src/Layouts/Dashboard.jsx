@@ -18,6 +18,7 @@ import useRoleInstructor from "../Hook/useRoleInstructor";
 
 const Dashboard = () => {
   useTitle("Dashboard");
+  
   const [isAdmin] = useAdmin();
   const [isInstructor] = useRoleInstructor();
 
@@ -77,7 +78,7 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/dashboard/myClass">
                     <FcBookmark></FcBookmark> My Classes
                   </NavLink>
                 </li>
@@ -96,12 +97,12 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/myClass">
+                  <NavLink to="/dashboard/enroll">
                     <FcApprove></FcApprove> Enrolled Classes
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/dashboard/history">
                     <FcCurrencyExchange></FcCurrencyExchange> Payment History
                   </NavLink>
                 </li>

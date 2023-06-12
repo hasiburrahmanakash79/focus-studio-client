@@ -2,8 +2,10 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import useAddToCart from "../../../Hook/useAddToCart";
 import { Link } from "react-router-dom";
+import useTitle from "../../../Hook/useTitle";
 
 const UserProfile = () => {
+  useTitle('Profile')
   const { user } = useContext(AuthContext);
   const [classes] = useAddToCart()
   return (

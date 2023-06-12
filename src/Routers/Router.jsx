@@ -17,6 +17,9 @@ import AdminRoute from "./AdminRoute";
 import AddClass from "../Pages/Dashboard/InstructorDashboard/AddClass";
 import Payment from "../Pages/Dashboard/UserDashboard/Payment/Payment";
 import AddReview from "../Pages/Dashboard/UserDashboard/AddReview";
+import PaymentHistory from "../Pages/Dashboard/UserDashboard/PaymentHistory";
+import EnrollClass from "../Pages/Dashboard/UserDashboard/EnrollClass";
+import MyClasses from "../Pages/Dashboard/InstructorDashboard/MyClasses";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +73,14 @@ const router = createBrowserRouter([
         element: <UserProfile></UserProfile>,
       },
       {
+        path: "enroll",
+        element: <EnrollClass></EnrollClass>
+      },
+      {
+        path: "history",
+        element: <PaymentHistory></PaymentHistory>
+      },
+      {
         path: "payment/:id",
         element: <Payment></Payment>,
       },
@@ -77,6 +88,8 @@ const router = createBrowserRouter([
         path: "addReview",
         element: <AddReview></AddReview>
       },
+
+      //admin dashboard
       {
         path: "allUser",
         element: (
@@ -85,10 +98,16 @@ const router = createBrowserRouter([
           </AdminRoute>
         ),
       },
+
+      // instructor Dashboard
       {
         path: "addClass",
         element: <AddClass></AddClass>,
       },
+      {
+        path: "myClass",
+        element: <MyClasses></MyClasses>
+      }
     ],
   },
   {

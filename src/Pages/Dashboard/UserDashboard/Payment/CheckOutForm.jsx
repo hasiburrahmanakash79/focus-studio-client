@@ -70,9 +70,12 @@ const CheckOutForm = ({ tutorial, price }) => {
         email: user?.email,
         transactionId: paymentIntent.id,
         price,
+        status: "Paid",
         date: new Date(),
         quantity: tutorial.length,
         classID: tutorial._id,
+        image: tutorial.image,
+        instructor: tutorial.instructor_name,
         classNames: tutorial.name,
       };
       axiosSecure.post("/payments", payment).then((res) => {

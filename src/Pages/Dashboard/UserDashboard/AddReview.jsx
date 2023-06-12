@@ -5,7 +5,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import useTitle from "../../../Hook/useTitle";
 
 const AddReview = () => {
-  useTitle("AddClass");
+  useTitle("AddReview");
 
   const { user } = useContext(AuthContext);
 

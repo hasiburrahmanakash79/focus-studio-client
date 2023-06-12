@@ -20,7 +20,7 @@ const SelectedClasses = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/carts/${selected._id}`, {
+        fetch(`https://focus-studio-server.vercel.app/carts/${selected._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
