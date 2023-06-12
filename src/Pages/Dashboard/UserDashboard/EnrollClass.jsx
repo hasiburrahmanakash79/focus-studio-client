@@ -21,7 +21,7 @@ const EnrollClass = () => {
         {allClasses.map((classes) => (
           <div
             key={classes._id}
-            className="card card-side bg-base-100 shadow-lg p-3 mt-2 border"
+            className="card md:card-side bg-base-100 shadow-lg p-3 mt-2 border"
           >
             <div className="avatar w-52">
               <div className=" rounded-lg">

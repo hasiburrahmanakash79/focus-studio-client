@@ -52,7 +52,7 @@ const SelectedClasses = () => {
         </h1>
       </div>
       <div className="overflow-x-auto rounded-xl">
-        <table className="table w-full">
+        <table className="table md:w-full">
           {/* head */}
           <thead className="bg-slate-200">
             <tr>

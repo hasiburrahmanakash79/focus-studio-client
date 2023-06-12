@@ -59,7 +59,7 @@ const Footer = () => {
           <p className="footer-title">Address</p>
           <p className="link link-hover">Dhanmondi-32, Shongkor, Dhaka</p>
           <p className="link link-hover">+777 5654 6565</p>
-          <p className="link link-hover">focusStudioAcademy@web.com</p>
+          <p className="link link-hover">focus@studio.com</p>
           <p className="link link-hover">Copy right © 2023 </p>
           <p className="link link-hover">All right reserved</p>
         </div>

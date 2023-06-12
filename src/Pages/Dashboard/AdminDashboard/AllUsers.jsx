@@ -84,7 +84,7 @@ const AllUsers = () => {
         title={"manage user"}
       ></SectionTitle>
       <div className="overflow-x-auto">
-        <table className="table w-full">
+        <table className="table md:w-full">
           {/* head */}
           <thead className="bg-slate-200">
             <tr>
