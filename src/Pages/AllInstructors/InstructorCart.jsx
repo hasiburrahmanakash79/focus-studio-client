@@ -5,7 +5,7 @@ const InstructorCart = ({ instructor }) => {
   return (
     <div className="card md:card-side bg-base-100 shadow-lg p-3 mt-2 border">
       <div className="avatar">
-        <div className="w-52 rounded-lg">
+        <div className="md:w-52 rounded-lg">
           <img src={image} />
         </div>
       </div>

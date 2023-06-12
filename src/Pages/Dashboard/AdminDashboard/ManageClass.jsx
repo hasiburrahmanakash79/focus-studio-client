@@ -7,9 +7,9 @@ const ManageClass = () => {
     <div>
       <SectionTitle title={"manage Class"}></SectionTitle>
       <div className="p-5">
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto rounded-xl border">
           <table className="table">
-            <thead>
+            <thead className="bg-slate-100 uppercase">
               <tr>
                 <th>#</th>
                 <th>Title</th>
@@ -17,6 +17,7 @@ const ManageClass = () => {
                 <th>Email</th>
                 <th>Total seat</th>
                 <th>Price</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -25,6 +26,9 @@ const ManageClass = () => {
                 <td>Cy Ganderton</td>
                 <td>Quality Control Specialist</td>
                 <td>Blue</td>
+                <td>Blue</td>
+                <td>Blue</td>
+                <td><button className="btn">Approve</button></td>
               </tr>
             </tbody>
           </table>

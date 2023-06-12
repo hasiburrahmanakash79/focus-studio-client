@@ -54,7 +54,7 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/dashboard/manageClass">
                     <FcBookmark></FcBookmark> Manage Classes
                   </NavLink>
                 </li>
