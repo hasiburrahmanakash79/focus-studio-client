@@ -8,7 +8,7 @@ const EnrollClass = () => {
   const [allClasses, setAllClasses] = useState([]);
   const { user } = useContext(AuthContext);
   useEffect(() => {
-    fetch(`http://localhost:5000/history/${user?.email}`)
+    fetch(`https://focus-studio-server.vercel.app/history/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setAllClasses(data);
