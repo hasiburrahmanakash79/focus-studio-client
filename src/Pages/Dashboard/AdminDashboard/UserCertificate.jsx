@@ -1,17 +1,13 @@
-import { useEffect, useState } from "react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import Swal from "sweetalert2";
+import { useQuery } from "react-query";
 
 const UserCertificate = () => {
-  const [classes, setClasses] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/history")
-      .then((res) => res.json())
-      .then((data) => {
-        setClasses(data);
-        console.log(data);
-      });
-  }, []);
+  const { data: classes = [], refetch } = useQuery(["users"], async () => {
+    const res = await fetch("http://localhost:5000/history");
+    return res.json();
+  });
+
   const handleCertificate = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -24,6 +20,21 @@ const UserCertificate = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         console.log(id);
+        fetch(`http://localhost:5000/history/${id}`, {
+          method: "PATCH",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            refetch();
+            if (data.modifiedCount) {
+              Swal.fire({
+                showConfirmButton: false,
+                timer: 1500,
+                title: "Done",
+                icon: "success",
+              });
+            }
+          });
       }
     });
   };
@@ -59,12 +70,16 @@ const UserCertificate = () => {
                 <td>{finish.date}</td>
 
                 <td>
-                  <button
-                    onClick={() => handleCertificate(finish._id)}
-                    className="btn"
-                  >
-                    Complete
-                  </button>
+                  {finish.certificate === "yes" ? (
+                    <p>Done</p>
+                  ) : (
+                    <button
+                      onClick={() => handleCertificate(finish._id)}
+                      className="btn"
+                    >
+                      Complete
+                    </button>
+                  )}
                 </td>
               </tr>
             ))}
