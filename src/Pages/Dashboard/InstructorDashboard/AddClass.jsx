@@ -10,41 +10,48 @@ const AddClass = () => {
   useTitle("AddClass");
 
   const { user } = useContext(AuthContext);
- 
-  const [axiosSecure]= useAxiosSecure()
-  const Image_Hosting_Token = import.meta.env.VITE_image_hosting_apiKey
 
-  const { register, handleSubmit} = useForm();
+  const [axiosSecure] = useAxiosSecure();
+  const Image_Hosting_Token = import.meta.env.VITE_image_hosting_apiKey;
 
-  const image_hosting_url = `https://api.imgbb.com/1/upload?key=${Image_Hosting_Token}`
+  const { register, handleSubmit } = useForm();
 
-  const onSubmit = data => {
+  const image_hosting_url = `https://api.imgbb.com/1/upload?key=${Image_Hosting_Token}`;
+
+  const onSubmit = (data) => {
     const formData = new FormData();
-    formData.append('image', data.image[0])
+    formData.append("image", data.image[0]);
 
     fetch(image_hosting_url, {
       method: "POST",
-      body: formData
+      body: formData,
     })
-    .then(res => res.json())
-    .then(imageResponse => {
-      if(imageResponse.success){
-        const imgURL = imageResponse.data.display_url;
-        const {name, price, instructor_name, email, available_seat} = data;
-        const addClass = {name, price: parseInt(price), instructor_name, email, available_seat: parseInt(available_seat), image: imgURL, status: "pending"}
-        axiosSecure.post('/classes', addClass)
-        .then(data => {
-          if(data.data.insertedId){
-            Swal.fire({
-              showConfirmButton: false,
-              timer: 1500,
-              title: "Item added Successful",
-              icon: "success",
-            });
-          }
-        })
-      }
-    })
+      .then((res) => res.json())
+      .then((imageResponse) => {
+        if (imageResponse.success) {
+          const imgURL = imageResponse.data.display_url;
+          const { name, price, instructor_name, email, available_seat } = data;
+          const addClass = {
+            name,
+            price: parseInt(price),
+            instructor_name,
+            email,
+            available_seat: parseInt(available_seat),
+            image: imgURL,
+            status: "pending",
+          };
+          axiosSecure.post("/classes", addClass).then((data) => {
+            if (data.data.insertedId) {
+              Swal.fire({
+                showConfirmButton: false,
+                timer: 1500,
+                title: "Item added Successful",
+                icon: "success",
+              });
+            }
+          });
+        }
+      });
   };
 
   return (

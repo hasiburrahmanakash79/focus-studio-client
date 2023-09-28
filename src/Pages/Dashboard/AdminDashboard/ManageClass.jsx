@@ -1,8 +1,23 @@
+
 import useTitle from "../../../Hook/useTitle";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import { useQuery } from "react-query";
 
 const ManageClass = () => {
   useTitle("ManageClass");
+
+  const {data: classes = []} = useQuery({
+    queryKey: ['pending'],
+    queryFn: async () => {
+        const res = fetch("http://localhost:5000/status/pending");
+        const data = res.json();
+        return data
+        
+    }
+    
+})
+console.log(classes);
+
   return (
     <div>
       <SectionTitle title={"manage Class"}></SectionTitle>
@@ -24,7 +39,7 @@ const ManageClass = () => {
               <tr>
                 <th>1</th>
                 <td>Cy Ganderton</td>
-                <td>Quality Control Specialist</td>
+                <td>Quality</td>
                 <td>Blue</td>
                 <td>Blue</td>
                 <td>Blue</td>

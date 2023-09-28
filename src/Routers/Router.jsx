@@ -22,6 +22,7 @@ import EnrollClass from "../Pages/Dashboard/UserDashboard/EnrollClass";
 import MyClasses from "../Pages/Dashboard/InstructorDashboard/MyClasses";
 import InstructorRoute from "./InstructorRoute";
 import ManageClass from "../Pages/Dashboard/AdminDashboard/ManageClass";
+import UserCertificate from "../Pages/Dashboard/AdminDashboard/UserCertificate";
 
 const router = createBrowserRouter([
   {
@@ -105,6 +106,14 @@ const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <ManageClass></ManageClass>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "certificate",
+        element: (
+          <AdminRoute>
+            <UserCertificate/>
           </AdminRoute>
         ),
       },

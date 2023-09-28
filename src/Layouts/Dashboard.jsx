@@ -54,6 +54,11 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
+                  <NavLink to="/dashboard/certificate">
+                    <FcBookmark></FcBookmark> Manage user certificate
+                  </NavLink>
+                </li>
+                <li>
                   <NavLink to="/dashboard/manageClass">
                     <FcBookmark></FcBookmark> Manage Classes
                   </NavLink>

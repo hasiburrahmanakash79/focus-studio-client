@@ -10,7 +10,6 @@ const SignUp = () => {
   useTitle("SignUp");
   const [passShow, setPassShow] = useState(false);
   const { signUpUser, updateUserInfo } = useContext(AuthContext);
-  // const [matchPass, setMatchPass] = useState()
 
   const navigate = useNavigate();
   const location = useLocation();
