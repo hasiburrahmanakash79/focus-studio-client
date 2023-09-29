@@ -54,7 +54,7 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/certificate">
+                  <NavLink to="/dashboard/makeCertificate">
                     <FcBookmark></FcBookmark> Manage user certificate
                   </NavLink>
                 </li>
@@ -113,6 +113,11 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink to="/dashboard/addReview">
+                    <FcLike></FcLike> Add Review
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/certificate">
                     <FcLike></FcLike> Add Review
                   </NavLink>
                 </li>

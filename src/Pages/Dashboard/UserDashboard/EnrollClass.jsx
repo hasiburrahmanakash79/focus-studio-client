@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import useTitle from "../../../Hook/useTitle";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const EnrollClass = () => {
   useTitle("Your Class");
@@ -31,7 +32,9 @@ const EnrollClass = () => {
             <div className="card-body font-semibold">
               <h2 className="card-title">{classes?.classNames}</h2>
               <p>Instructor: {classes?.instructor}</p>
-              <button className="btn">Start Class</button>
+              {
+                classes.certificate === "yes" ? <Link to='/certificate' className="btn">Your course complete</Link> : <button className="btn">Start Class</button>
+              }
             </div>
           </div>
         ))}

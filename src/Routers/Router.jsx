@@ -23,6 +23,7 @@ import MyClasses from "../Pages/Dashboard/InstructorDashboard/MyClasses";
 import InstructorRoute from "./InstructorRoute";
 import ManageClass from "../Pages/Dashboard/AdminDashboard/ManageClass";
 import UserCertificate from "../Pages/Dashboard/AdminDashboard/UserCertificate";
+import Certificate from "../Pages/Dashboard/UserDashboard/Certificate";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "certificate",
+        element: <Certificate/>,
       },
     ],
   },
@@ -91,6 +96,7 @@ const router = createBrowserRouter([
         path: "addReview",
         element: <AddReview></AddReview>,
       },
+      
 
       //admin dashboard
       {
@@ -110,7 +116,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "certificate",
+        path: "makeCertificate",
         element: (
           <AdminRoute>
             <UserCertificate/>
