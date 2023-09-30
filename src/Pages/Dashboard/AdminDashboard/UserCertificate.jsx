@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 
 const UserCertificate = () => {
   const { data: classes = [], refetch } = useQuery(["users"], async () => {
-    const res = await fetch("http://localhost:5000/history");
+    const res = await fetch("https://focus-studio-server.vercel.app/history");
     return res.json();
   });
 
@@ -20,7 +20,7 @@ const UserCertificate = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         console.log(id);
-        fetch(`http://localhost:5000/history/${id}`, {
+        fetch(`https://focus-studio-server.vercel.app/history/${id}`, {
           method: "PATCH",
         })
           .then((res) => res.json())

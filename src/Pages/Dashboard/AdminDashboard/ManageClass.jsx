@@ -9,7 +9,7 @@ const ManageClass = () => {
   const {data: classes = []} = useQuery({
     queryKey: ['pending'],
     queryFn: async () => {
-        const res = fetch("http://localhost:5000/status/pending");
+        const res = fetch("https://focus-studio-server.vercel.app/status/pending");
         const data = res.json();
         return data
         
