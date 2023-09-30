@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import { useLoaderData, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 
 const Certificate = () => {
   const { user, loading } = useContext(AuthContext);

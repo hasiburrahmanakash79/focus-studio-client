@@ -3,7 +3,7 @@ import { FcApproval } from "react-icons/fc";
 const InstructorCart = ({ instructor }) => {
   const { name, image, classesTaken, email, popularClassName } = instructor;
   return (
-    <div className="card md:card-side bg-base-100 shadow-lg text-white p-3 mt-2 border">
+    <div className="card md:card-side bg-base-100 shadow-lg p-3 mt-2 border">
       <div className="avatar">
         <div className="md:w-52 rounded-lg">
           <img src={image} />

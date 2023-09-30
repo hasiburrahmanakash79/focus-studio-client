@@ -48,9 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/certificate/:id",
-        element: <Certificate/>,
-        // loader: ({params}) => fetch(`http://localhost:5000/history/${params.id}`)
-        // loader: ({params}) => fetch(`http://localhost:5000/history/${params.id}`)
+        element: <Certificate/>
       },
     ],
   },

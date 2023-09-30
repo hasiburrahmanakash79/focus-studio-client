@@ -9,7 +9,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div className="max-w-screen-2xl mx-auto">
+  <div className="">
     <React.StrictMode>
       <AuthProvider>
         <QueryClientProvider client={queryClient}>

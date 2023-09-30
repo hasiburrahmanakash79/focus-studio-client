@@ -8,9 +8,11 @@ const Home = () => {
     return (
         <div>
            <Banner></Banner>
+           <div className="container mx-auto">
            <PopularClasses></PopularClasses>
            <PopularInstructor></PopularInstructor>
            <PhotoGallery></PhotoGallery> 
+           </div>
         </div>
     );
 };
