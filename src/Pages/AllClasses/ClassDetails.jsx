@@ -60,7 +60,7 @@ const ClassDetails = ({ tutorial }) => {
   };
 
   return (
-    <div className="border p-3 rounded-md hover:border-yellow-300">
+    <div className="border p-3 hover:shadow-xl hover:border-2 rounded-md">
       <div className="avatar">
         <div className="w-full rounded">
           <img src={image} />
@@ -76,7 +76,7 @@ const ClassDetails = ({ tutorial }) => {
         <Link>
           <button
             onClick={() => handleSelectClass(tutorial)}
-            className="btn btn-sm my-3"
+            className="btn btn-sm btn-primary my-3"
           >
             Select Class
           </button>

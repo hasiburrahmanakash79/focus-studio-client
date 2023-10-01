@@ -17,18 +17,18 @@ export default {
   daisyui: {
     themes: [{
       customLightTheme: {
-        color: '#0b0504',
-        background: '#f0f0f0',
-        primary: '#4098a0',
-        secondary: '#27272a',
-        accent: '#477361',
+        color: '#131111',
+        background: '#ebeaea',
+        primary: '#959d9b',
+        secondary: '#cfd0d3',
+        accent: '#676f6d',
       },
       customDarkTheme: {
-        color: '#ffffff',
-        background: '#0b0504',
-        primary: '#4098a0',
-        secondary: '#27272a',
-        accent: '#92d3b8',
+        color: '#eeecec',
+        background: '#151414',
+        primary: '#626a68',
+        secondary: '#2c2d30',
+        accent: '#909896',
       },
     }]
   },

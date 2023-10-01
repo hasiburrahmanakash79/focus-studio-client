@@ -5,7 +5,7 @@ const About = () => {
   useTitle("About");
 
   return (
-    <div className="pt-24">
+    <div className="pt-16">
       <SectionTitle title={"about"}></SectionTitle>
       <div className="md:flex items-center justify-center p-5 gap-10 ">
         <div className="md:w-1/2 mb-3">

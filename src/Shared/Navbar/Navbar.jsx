@@ -51,7 +51,7 @@ const Navbar = () => {
         <Link to="/instructor">Instructors</Link>
       </li>
       <li>
-        <Link to="/classes">Classes</Link>
+        <Link to="/classes">Our Courses</Link>
       </li>
       <li>
         <Link to="/about">About</Link>
@@ -63,13 +63,13 @@ const Navbar = () => {
     <div className="bg-opacity-70 bg-black backdrop-blur-md navbar fixed z-10 text-white">
       <div className="container mx-auto">
         <div className="navbar-start flex items-center">
-          <div className="dropdown lg:hidden">
+          <div className="dropdown  lg:hidden">
             <label tabIndex={0} className="btn btn-ghost">
               <FaBars />
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow text-black bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black rounded-box w-52"
             >
               {NavItems}
             </ul>
@@ -127,7 +127,7 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to="/login">Login</Link>
+              <Link className="btn btn-sm btn-primary" to="/login">Login</Link>
             </>
           )}
           <div>

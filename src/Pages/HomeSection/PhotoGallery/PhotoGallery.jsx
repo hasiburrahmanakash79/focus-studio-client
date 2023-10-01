@@ -4,7 +4,7 @@ const PhotoGallery = () => {
   return (
     <div>
       <SectionTitle title={"Photo Gallery"}></SectionTitle>
-      <div className="grid grid-cols-7 gap-3">
+      <div className="grid md:grid-cols-8 grid-cols-4 gap-3">
         <div className="avatar">
           <div className="w-full rounded">
             <img src="https://i.pinimg.com/originals/5a/41/58/5a4158f25a620b90b45eab1e77910a35.jpg" />
@@ -68,6 +68,16 @@ const PhotoGallery = () => {
         <div className="avatar">
           <div className="w-full rounded">
             <img src="https://c4.wallpaperflare.com/wallpaper/816/62/518/digital-art-nature-trees-mountains-wallpaper-thumb.jpg" />
+          </div>
+        </div>
+        <div className="avatar">
+          <div className="w-full rounded">
+            <img src="https://images.pexels.com/photos/4651722/pexels-photo-4651722.jpeg?auto=compress&cs=tinysrgb&w=1600" />
+          </div>
+        </div>
+        <div className="avatar">
+          <div className="w-full rounded">
+            <img src="https://images.pexels.com/photos/4651722/pexels-photo-4651722.jpeg?auto=compress&cs=tinysrgb&w=1600" />
           </div>
         </div>
         <div className="avatar">

@@ -17,7 +17,7 @@ const AllInstructors = () => {
   }
 
   return (
-    <div className="pt-24 container mx-auto">
+    <div className="pt-16 container mx-auto">
       <SectionTitle
         title={"Make Your Dream"}
         subTitle={"Our Honourable Instructor"}

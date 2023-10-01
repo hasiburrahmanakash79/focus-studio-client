@@ -16,13 +16,13 @@ const AllClasses = () => {
   };
 
   return (
-    <div className="pt-24 container mx-auto">
+    <div className="pt-10 p-5 container mx-auto">
       <SectionTitle
-        title={"All Classes"}
+        title={"All Courses"}
         subTitle={"Make Your Dream"}
       ></SectionTitle>
-      <h1 className="md:text-4xl text-2xl text-center font-semibold">
-        Our Total paid tutorial is {classes.length}
+      <h1 className="md:text-4xl text-2xl text-center font-semibold mb-5">
+        Our Total paid course is {classes.length}
       </h1>
       <div className="md:grid grid-cols-4 gap-5 py-5">
         {classes.slice(0, displayCount).map((tutorial) => (
@@ -35,7 +35,7 @@ const AllClasses = () => {
             onClick={handleSeeMore}
             className="btn btn-primary btn-outline"
           >
-            See More classes
+            See More Course
           </button>
         )}
       </div>

@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 const PopularInstructorCarts = ({ PopularInstructor }) => {
   const { name, popularClassName, image } = PopularInstructor;
   return (
-    <div className="text-center border rounded-xl p-7">
+    <div className="text-center border hover:shadow-xl hover:border-2 shadow mb-5 rounded-xl p-7">
       <div className="avatar">
         <div className="w-32 rounded-full">
           <img src={image} />
