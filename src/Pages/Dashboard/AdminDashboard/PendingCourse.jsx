@@ -2,6 +2,7 @@ import { FcCheckmark } from "react-icons/fc";
 import useClasses from "../../../Hook/useClasses";
 import useTitle from "../../../Hook/useTitle";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import Swal from "sweetalert2";
 
 const PendingCourse = () => {
   useTitle("PendingClass");
@@ -9,7 +10,25 @@ const PendingCourse = () => {
   const [classes, refetch] = useClasses();
   const pendingCourse = classes.filter((course) => course.status === "pending");
 
-  console.log(pendingCourse);
+  // http://localhost:5000/
+  const handleApproved = (id) => {
+    console.log(id);
+    fetch(`http://localhost:5000/classes/approve/${id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        refetch();
+        if (data.modifiedCount) {
+          Swal.fire({
+            showConfirmButton: false,
+            timer: 1000,
+            title: 'Approved',
+            icon: "success",
+          });
+        }
+      });
+  };
 
   return (
     <div>
@@ -33,11 +52,13 @@ const PendingCourse = () => {
               {pendingCourse.map((courses, index) => (
                 <tr key={courses?._id}>
                   <th>{index + 1}</th>
-                  <td><div className="avatar">
-                    <div className="w-16 rounded">
-                      <img src={courses?.image} />
+                  <td>
+                    <div className="avatar">
+                      <div className="w-16 rounded">
+                        <img src={courses?.image} />
+                      </div>
                     </div>
-                  </div></td>
+                  </td>
                   <td>{courses?.name}</td>
                   <td>{courses?.instructor_name}</td>
                   <td>{courses?.email}</td>
@@ -45,7 +66,12 @@ const PendingCourse = () => {
                   <td>${courses?.price}</td>
 
                   <td className="text-2xl">
-                    <button className="mr-5"><FcCheckmark/></button>
+                    <button
+                      onClick={() => handleApproved(courses._id)}
+                      className="mr-5"
+                    >
+                      <FcCheckmark />
+                    </button>
                     <button className="text-red-700">X</button>
                   </td>
                 </tr>
