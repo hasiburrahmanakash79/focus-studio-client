@@ -10,10 +10,9 @@ const PendingCourse = () => {
   const [classes, refetch] = useClasses();
   const pendingCourse = classes.filter((course) => course.status === "pending");
 
-  // http://localhost:5000/
   const handleApproved = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/classes/approve/${id}`, {
+    fetch(`https://focus-studio-server.vercel.app/classes/approve/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -42,7 +41,7 @@ const PendingCourse = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/classes/${id}`, {
+        fetch(`https://focus-studio-server.vercel.app/classes/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
