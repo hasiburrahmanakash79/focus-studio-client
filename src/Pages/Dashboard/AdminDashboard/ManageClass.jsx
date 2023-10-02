@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import useClasses from "../../../Hook/useClasses";
 import useTitle from "../../../Hook/useTitle";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
@@ -8,6 +9,23 @@ const ManageClass = () => {
   const [classes, refetch] = useClasses();
 
   console.log(classes);
+
+  const handleDelete = (id) => {
+    console.log(id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to remove this Course!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+      }
+    });
+  }
 
   return (
     <div>
@@ -43,7 +61,7 @@ const ManageClass = () => {
                 <td>${courses?.price}</td>
 
                 <td className="text-2xl">
-                  <button className="btn bg-red-500">Remove</button>
+                  <button  className="btn bg-red-500">Remove</button>
                 </td>
               </tr>
               ))}

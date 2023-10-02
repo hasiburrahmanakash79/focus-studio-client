@@ -30,6 +30,36 @@ const PendingCourse = () => {
       });
   };
 
+  const handleDelete = (id) => {
+    console.log(id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to remove this Course!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/classes/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            refetch();
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                "Deleted!",
+                "Deleted.",
+                "success"
+              );
+            }
+          });
+      }
+    });
+  }
+
   return (
     <div>
       <SectionTitle title={"Approve Course"}></SectionTitle>
@@ -65,14 +95,14 @@ const PendingCourse = () => {
                   <td>{courses?.available_seat}</td>
                   <td>${courses?.price}</td>
 
-                  <td className="text-2xl">
+                  <td className="text-2xl font-bold">
                     <button
                       onClick={() => handleApproved(courses._id)}
                       className="mr-5"
                     >
                       <FcCheckmark />
                     </button>
-                    <button className="text-red-700">X</button>
+                    <button onClick={() => handleDelete(courses._id)} className="text-red-700">X</button>
                   </td>
                 </tr>
               ))}
