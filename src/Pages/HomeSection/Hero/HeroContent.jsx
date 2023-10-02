@@ -12,7 +12,7 @@ const HeroContent = () => {
       </div>
       <div className="text-center md:text-left">
         <p>Welcome To </p>
-        <h1 className="my-3 text-6xl font-bold uppercase">Studio Focus (:</h1>
+        <h1 className="my-3 md:text-6xl text-4xl font-bold uppercase">Studio Focus (:</h1>
         <p className="backdrop-blur-md">
           "Studio Focus, the preeminent online photography institute, is
           dedicated to elevating your photography skills to new heights. Our

@@ -21,7 +21,7 @@ const MyClasses = () => {
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead className="bg-gray-300 text-lg ">
+          <thead className="bg-black text-white uppercase">
             <tr>
               <th>Image</th>
               <th>Title</th>

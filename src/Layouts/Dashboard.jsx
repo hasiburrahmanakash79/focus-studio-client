@@ -26,7 +26,7 @@ const Dashboard = () => {
     <div>
       <div className="drawer md:drawer-open">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content bg-slate-800 text-white h-screen">
+        <div className="drawer-content bg-slate-800 text-white min-h-screen">
           {/* Page content here */}
           <Outlet></Outlet>
           <label

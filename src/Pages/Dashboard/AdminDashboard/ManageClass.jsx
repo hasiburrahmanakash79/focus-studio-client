@@ -22,9 +22,9 @@ console.log(classes);
     <div>
       <SectionTitle title={"manage Class"}></SectionTitle>
       <div className="p-5">
-        <div className="overflow-x-auto rounded-xl border">
+        <div className="overflow-x-auto rounded-xl">
           <table className="table">
-            <thead className="bg-slate-100 uppercase">
+            <thead className="bg-black text-white uppercase">
               <tr>
                 <th>#</th>
                 <th>Title</th>

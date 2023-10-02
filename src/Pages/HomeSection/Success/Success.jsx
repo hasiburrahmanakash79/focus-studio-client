@@ -60,7 +60,7 @@ const Success = () => {
                 ) : null}
               </div>
               <div className="font-primary text-sm tracking-[2px]">
-                University <br /> Scholars
+                Certified <br /> Mentor
               </div>
             </div>
 
@@ -85,6 +85,21 @@ const Success = () => {
                 {inView ? (
                   <CountUp
                     className="font-bold"
+                    start={0}
+                    end={100}
+                    duration={7}
+                  />
+                ) : null}
+              </div>
+              <div className="font-primary text-sm tracking-[2px]">
+                Total <br /> Courses
+              </div>
+            </div>
+            <div>
+              <div className="text-5xl ">
+                {inView ? (
+                  <CountUp
+                    className="font-bold"
                     start={10}
                     end={190}
                     duration={7}
@@ -92,7 +107,7 @@ const Success = () => {
                 ) : null}
               </div>
               <div className="font-primary text-sm tracking-[2px]">
-                Worldwide <br /> Branches
+                Won <br /> Awards
               </div>
             </div>
           </div>

@@ -86,7 +86,7 @@ const AllUsers = () => {
       <div className="overflow-x-auto">
         <table className="table md:w-full">
           {/* head */}
-          <thead className="bg-slate-200">
+          <thead className="bg-black text-white uppercase">
             <tr>
               <th>No.</th>
               <th>Image</th>

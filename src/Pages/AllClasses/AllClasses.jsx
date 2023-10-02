@@ -2,7 +2,7 @@ import useTitle from "../../Hook/useTitle";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import useClasses from "../../Hook/useClasses";
 import ClassDetails from "./ClassDetails";
-import {  useState } from "react";
+import { useState } from "react";
 const AllClasses = () => {
   useTitle("All Classes");
   const [seeMore, setSeeMore] = useState(false);
@@ -16,28 +16,32 @@ const AllClasses = () => {
   };
 
   return (
-    <div className="pt-10 p-5 container mx-auto">
-      <SectionTitle
-        title={"All Courses"}
-        subTitle={"Make Your Dream"}
-      ></SectionTitle>
-      <h1 className="md:text-4xl text-2xl text-center font-semibold mb-5">
-        Our Total paid course is {classes.length}
-      </h1>
-      <div className="md:grid grid-cols-4 gap-5 py-5">
-        {classes.slice(0, displayCount).map((tutorial) => (
-          <ClassDetails key={tutorial._id} tutorial={tutorial}></ClassDetails>
-        ))}
+    <div className="pt-16">
+      <div className="p-5 py-16 mt-5 bg-black text-center text-yellow-600">
+        <p>Make Your Dream</p>
+        <h2 className="text-3xl md:text-6xl font-semibold uppercase py-2">
+          Our All Courses
+        </h2>
       </div>
-      <div className="text-center my-5">
-        {!seeMore && (
-          <button
-            onClick={handleSeeMore}
-            className="btn btn-primary btn-outline"
-          >
-            See More Course
-          </button>
-        )}
+      <div className="p-5 container mx-auto">
+        <h1 className="md:text-4xl text-2xl text-center font-semibold mb-5">
+          Our Total paid course is {classes.length}
+        </h1>
+        <div className="md:grid grid-cols-4 gap-5 py-5">
+          {classes.slice(0, displayCount).map((tutorial) => (
+            <ClassDetails key={tutorial._id} tutorial={tutorial}></ClassDetails>
+          ))}
+        </div>
+        <div className="text-center my-5">
+          {!seeMore && (
+            <button
+              onClick={handleSeeMore}
+              className="btn btn-primary btn-outline"
+            >
+              See More Course
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

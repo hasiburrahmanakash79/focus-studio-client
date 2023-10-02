@@ -60,7 +60,7 @@ const AddClass = () => {
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-base-200 p-10 rounded-lg w-full"
+        className="bg-base-200 md:w-1/2 mx-auto p-10 rounded-lg"
       >
         <div>
           <label className="label">
@@ -70,7 +70,7 @@ const AddClass = () => {
             type="text"
             {...register("name", { required: true })}
             placeholder="Type here"
-            className="input w-full"
+            className="input w-full input-bordered"
           />
         </div>
         <div className="md:grid grid-cols-2 gap-5">
@@ -83,7 +83,7 @@ const AddClass = () => {
               type="text"
               defaultValue={user.displayName}
               placeholder="Type here"
-              className="input w-full"
+              className="input w-full input-bordered"
             />
           </div>
           <div>
@@ -95,7 +95,7 @@ const AddClass = () => {
               type="text"
               defaultValue={user.email}
               placeholder="Type here"
-              className="input w-full"
+              className="input w-full input-bordered"
             />
           </div>
         </div>
@@ -108,7 +108,7 @@ const AddClass = () => {
               {...register("price", { required: true })}
               type="number"
               placeholder="Type here"
-              className="input w-full"
+              className="input w-full input-bordered"
             />
           </div>
           <div>
@@ -119,7 +119,7 @@ const AddClass = () => {
               {...register("available_seat", { required: true })}
               type="number"
               placeholder="Type here"
-              className="input w-full"
+              className="input w-full input-bordered"
             />
           </div>
         </div>
@@ -127,7 +127,7 @@ const AddClass = () => {
           <input
             type="file"
             {...register("image", { required: true })}
-            className="file-input w-full my-3"
+            className="file-input w-full my-3 input-bordered"
           />
         </div>
         <div>

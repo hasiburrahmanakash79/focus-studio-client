@@ -42,9 +42,9 @@ const UserCertificate = () => {
     <div className="p-7">
       <SectionTitle title={"provide student certificate"}></SectionTitle>
 
-      <div className="overflow-x-auto rounded-xl border">
+      <div className="overflow-x-auto rounded-xl">
         <table className="table">
-          <thead className="bg-slate-100 uppercase">
+          <thead className="bg-black text-white uppercase">
             <tr>
               <th>Image</th>
               <th>Course Name</th>
