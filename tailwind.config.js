@@ -17,17 +17,17 @@ export default {
   daisyui: {
     themes: [{
       customLightTheme: {
-        color: '#131111',
-        background: '#ebeaea',
-        primary: '#959d9b',
-        secondary: '#cfd0d3',
+        color: '#111111',
+        background: '#f0f0f0',
+        primary: '#1A0072',
+        secondary: '#354847',
         accent: '#676f6d',
       },
       customDarkTheme: {
-        color: '#eeecec',
-        background: '#151414',
-        primary: '#626a68',
-        secondary: '#2c2d30',
+        color: '#ffffff',
+        background: '#081221',
+        primary: '#ACBD0E',
+        secondary: '#354847',
         accent: '#909896',
       },
     }]

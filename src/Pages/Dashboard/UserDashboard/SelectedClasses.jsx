@@ -54,7 +54,7 @@ const SelectedClasses = () => {
       <div className="overflow-x-auto rounded-xl">
         <table className="table md:w-full">
           {/* head */}
-          <thead className="bg-slate-200">
+          <thead className="bg-black text-white">
             <tr>
               <th>No.</th>
               <th>Image</th>

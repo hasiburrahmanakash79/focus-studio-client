@@ -17,11 +17,11 @@ const AddReview = () => {
 
   return (
     <div className="p-5">
-      <SectionTitle title={"Add an Review"}></SectionTitle>
+      <SectionTitle title={"Give Review"}></SectionTitle>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-base-200 p-10 rounded-lg w-full"
+        className="bg-base-200 p-10 rounded-lg md:w-1/3 mx-auto"
       >
         <div>
           <label className="label">
@@ -32,7 +32,7 @@ const AddReview = () => {
             type="text"
             defaultValue={user.displayName}
             placeholder="Type here"
-            className="input w-full"
+            className="input w-full input-bordered border-white/20"
           />
         </div>
         <div className="md:grid grid-cols-2 gap-5">
@@ -42,7 +42,7 @@ const AddReview = () => {
             </label>
             <select
               {...register("star", { required: true })}
-              className="select w-full"
+              className="select w-full bg-black  input-bordered border-white/20"
             >
               <option disabled selected>
                 Pick One
@@ -63,7 +63,7 @@ const AddReview = () => {
               type="email"
               defaultValue={user.email}
               placeholder="Type here"
-              className="input w-full"
+              className="input w-full  input-bordered border-white/20"
             />
           </div>
         </div>
@@ -75,7 +75,7 @@ const AddReview = () => {
             {...register("description", { required: true })}
             type="text"
             placeholder="Type here"
-            className="input w-full"
+            className="input w-full  input-bordered border-white/20"
           />
         </div>
         <div>

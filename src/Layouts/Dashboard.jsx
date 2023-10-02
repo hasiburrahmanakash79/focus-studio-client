@@ -2,7 +2,6 @@ import {
   FcClapperboard,
   FcBusinessman,
   FcAddDatabase,
-  FcCamera,
   FcHome,
   FcApprove,
   FcBookmark,
@@ -15,10 +14,11 @@ import { NavLink, Outlet } from "react-router-dom";
 import useTitle from "../Hook/useTitle";
 import useAdmin from "../Hook/useAdmin";
 import useRoleInstructor from "../Hook/useRoleInstructor";
+import { FaBuffer } from "react-icons/fa";
 
 const Dashboard = () => {
   useTitle("Dashboard");
-  
+
   const [isAdmin] = useAdmin();
   const [isInstructor] = useRoleInstructor();
 
@@ -26,25 +26,25 @@ const Dashboard = () => {
     <div>
       <div className="drawer md:drawer-open">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content">
+        <div className="drawer-content bg-slate-800 text-white h-screen">
           {/* Page content here */}
           <Outlet></Outlet>
           <label
             htmlFor="my-drawer"
-            className="btn btn-info drawer-button lg:hidden"
+            className="text-3xl drawer-button lg:hidden flex items-center gap-3 m-5"
           >
-            Open drawer
+            <FaBuffer />Open
           </label>
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+          <ul className="menu p-4 w-52 h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
             <div className=" my-6">
-              <h1 className="text-4xl font-semibold flex items-center gap-2">
-                Focus Studio <FcCamera></FcCamera>
-              </h1>
-              <p>Best Photography teaching platform</p>
+            <img
+                src="https://i.ibb.co/TqNnpjX/Logo-SILVER.png"
+                className="w-32"
+              />
             </div>
             {isAdmin && (
               <>
@@ -89,7 +89,7 @@ const Dashboard = () => {
                 </li>
               </>
             )}
-            {!isAdmin && !isInstructor &&(
+            {!isAdmin && !isInstructor && (
               <>
                 <li>
                   <NavLink to="/dashboard/userProfile">
@@ -113,11 +113,6 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink to="/dashboard/addReview">
-                    <FcLike></FcLike> Add Review
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/certificate">
                     <FcLike></FcLike> Add Review
                   </NavLink>
                 </li>

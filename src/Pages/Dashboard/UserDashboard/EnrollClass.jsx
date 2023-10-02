@@ -18,7 +18,7 @@ const EnrollClass = () => {
   return (
     <div className="p-7">
       <SectionTitle title={"your enroll classes"}></SectionTitle>
-      <div className="grid md:grid-cols-2 gap-5">
+      <div className="grid md:grid-cols-3 gap-5">
         {courses.map((classes) => (
           <div
             key={classes?._id}

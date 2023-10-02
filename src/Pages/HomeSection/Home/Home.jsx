@@ -1,4 +1,5 @@
-import Banner from "../Banner/Banner";
+// import Banner from "../Banner/Banner";
+import Hero from "../Hero/Hero";
 import PhotoGallery from "../PhotoGallery/PhotoGallery";
 import PopularClasses from "../PopularClasses/PopularClasses";
 import PopularInstructor from "../PopularInstructor/PopularInstructor";
@@ -8,7 +9,8 @@ import Success from "../Success/Success";
 const Home = () => {
     return (
         <div className="">
-           <Banner></Banner>
+           {/* <Banner></Banner> */}
+           <Hero></Hero>
            <div className="container mx-auto p-5">
            <PopularClasses></PopularClasses>
            </div>
