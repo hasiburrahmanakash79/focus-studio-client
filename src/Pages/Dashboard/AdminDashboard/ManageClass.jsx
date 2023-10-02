@@ -22,7 +22,20 @@ const ManageClass = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        
+        fetch(`http://localhost:5000/classes/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            refetch();
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                "Deleted!",
+                "Deleted.",
+                "success"
+              );
+            }
+          });
       }
     });
   }
@@ -61,7 +74,7 @@ const ManageClass = () => {
                 <td>${courses?.price}</td>
 
                 <td className="text-2xl">
-                  <button  className="btn bg-red-500">Remove</button>
+                  <button onClick={() => handleDelete(courses._id)}  className="btn bg-red-600">Remove</button>
                 </td>
               </tr>
               ))}
