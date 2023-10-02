@@ -1,22 +1,13 @@
-
+import useClasses from "../../../Hook/useClasses";
 import useTitle from "../../../Hook/useTitle";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
-import { useQuery } from "react-query";
 
 const ManageClass = () => {
   useTitle("ManageClass");
 
-  const {data: classes = []} = useQuery({
-    queryKey: ['pending'],
-    queryFn: async () => {
-        const res = fetch("https://focus-studio-server.vercel.app/status/pending");
-        const data = res.json();
-        return data
-        
-    }
-    
-})
-console.log(classes);
+  const [classes, refetch] = useClasses();
+
+  console.log(classes);
 
   return (
     <div>
@@ -27,6 +18,7 @@ console.log(classes);
             <thead className="bg-black text-white uppercase">
               <tr>
                 <th>#</th>
+                <th>Image</th>
                 <th>Title</th>
                 <th>Instructor Name</th>
                 <th>Email</th>
@@ -36,15 +28,25 @@ console.log(classes);
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th>1</th>
-                <td>Cy Ganderton</td>
-                <td>Quality</td>
-                <td>Blue</td>
-                <td>Blue</td>
-                <td>Blue</td>
-                <td><button className="btn">Approve</button></td>
+              {classes.map((courses, index) => (
+                <tr key={courses?._id}>
+                <th>{index + 1}</th>
+                <td><div className="avatar">
+                  <div className="w-16 rounded">
+                    <img src={courses?.image} />
+                  </div>
+                </div></td>
+                <td>{courses?.name}</td>
+                <td>{courses?.instructor_name}</td>
+                <td>{courses?.email}</td>
+                <td>{courses?.available_seat}</td>
+                <td>${courses?.price}</td>
+
+                <td className="text-2xl">
+                  <button className="btn bg-red-500">Remove</button>
+                </td>
               </tr>
+              ))}
             </tbody>
           </table>
         </div>

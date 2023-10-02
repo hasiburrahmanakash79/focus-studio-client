@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import useInstructors from "../../Hook/useInstructors";
-import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import useTitle from "../../Hook/useTitle";
 import InstructorCart from "./InstructorCart";
 import { AuthContext } from "../../Provider/AuthProvider";

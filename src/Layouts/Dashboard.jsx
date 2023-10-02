@@ -4,6 +4,8 @@ import {
   FcAddDatabase,
   FcHome,
   FcApprove,
+  FcBiotech,
+  FcDocument,
   FcBookmark,
   FcContacts,
   FcLike,
@@ -54,18 +56,23 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/makeCertificate">
-                    <FcBookmark></FcBookmark> Manage user certificate
+                  <NavLink to="/dashboard/allUser">
+                    <FcBusinessman></FcBusinessman> Manage Users
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/manageClass">
-                    <FcBookmark></FcBookmark> Manage Classes
+                    <FcBookmark></FcBookmark> Manage Courses
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/allUser">
-                    <FcBusinessman></FcBusinessman> Manage Users
+                  <NavLink to="/dashboard/approve">
+                    <FcBiotech/> Approve Courses
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/makeCertificate">
+                    <FcDocument/> Manage certificate
                   </NavLink>
                 </li>
               </>
@@ -79,12 +86,12 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink to="/dashboard/addClass">
-                    <FcAddDatabase></FcAddDatabase> Add Class
+                    <FcAddDatabase></FcAddDatabase> Add Course
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/myClass">
-                    <FcBookmark></FcBookmark> My Classes
+                    <FcBookmark></FcBookmark> My Courses
                   </NavLink>
                 </li>
               </>
@@ -98,12 +105,12 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink to="/dashboard/selected">
-                    <FcApproval></FcApproval> Selected Classes
+                    <FcApproval></FcApproval> Selected Courses
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/enroll">
-                    <FcApprove></FcApprove> Enrolled Classes
+                    <FcApprove></FcApprove> Enrolled Courses
                   </NavLink>
                 </li>
                 <li>
@@ -113,7 +120,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink to="/dashboard/addReview">
-                    <FcLike></FcLike> Add Review
+                    <FcLike></FcLike> Give Feedback
                   </NavLink>
                 </li>
               </>
@@ -126,7 +133,7 @@ const Dashboard = () => {
             </li>
             <li>
               <NavLink to="/classes">
-                <FcClapperboard></FcClapperboard> All Classes
+                <FcClapperboard></FcClapperboard> All Courses
               </NavLink>
             </li>
             <li>

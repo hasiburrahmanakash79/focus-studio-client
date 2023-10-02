@@ -24,6 +24,7 @@ import InstructorRoute from "./InstructorRoute";
 import ManageClass from "../Pages/Dashboard/AdminDashboard/ManageClass";
 import UserCertificate from "../Pages/Dashboard/AdminDashboard/UserCertificate";
 import Certificate from "../Pages/Dashboard/UserDashboard/Certificate";
+import PendingCourse from "../Pages/Dashboard/AdminDashboard/PendingCourse";
 
 const router = createBrowserRouter([
   {
@@ -112,6 +113,14 @@ const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <ManageClass></ManageClass>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "approve",
+        element: (
+          <AdminRoute>
+            <PendingCourse/>
           </AdminRoute>
         ),
       },

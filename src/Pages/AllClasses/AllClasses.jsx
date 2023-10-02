@@ -1,5 +1,4 @@
 import useTitle from "../../Hook/useTitle";
-import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import useClasses from "../../Hook/useClasses";
 import ClassDetails from "./ClassDetails";
 import { useState } from "react";
