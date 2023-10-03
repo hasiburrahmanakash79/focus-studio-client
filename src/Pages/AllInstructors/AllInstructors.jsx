@@ -7,7 +7,7 @@ import Loading from "../../components/Loading/Loading";
 
 const AllInstructors = () => {
   useTitle("All Instructor");
-  const {loading} = useContext(AuthContext)
+  const { loading } = useContext(AuthContext);
   const [seeMore, setSeeMore] = useState(false);
   const [displayCount, setDisplayCount] = useState(6);
 
@@ -18,17 +18,19 @@ const AllInstructors = () => {
     setDisplayCount(instructors.length);
   };
 
-  if(loading){
-    return <Loading/>
+  if (loading) {
+    return <Loading />;
   }
 
   return (
-    <div className="pt-16">
-      <div className="p-5 py-16 mt-5 bg-black text-center text-yellow-600">
-        <p>Our honorable Instructor</p>
-        <h2 className="text-3xl md:text-6xl font-semibold uppercase py-2">
-          Make Your Dream
-        </h2>
+    <div className="pt-12">
+      <div className="bg-[url('https://i.ibb.co/DY9pPK8/titlebg.jpg')] bg-cover">
+        <div className="p-5 py-16 bg-black/40 text-center mt-5 text-yellow-600">
+          <p>Our honorable Instructor</p>
+          <h2 className="text-3xl md:text-6xl font-semibold uppercase py-2">
+            Make Your Dream
+          </h2>
+        </div>
       </div>
       <div className="pt-16 container mx-auto">
         <div className="md:grid grid-cols-3 gap-5 py-5">
