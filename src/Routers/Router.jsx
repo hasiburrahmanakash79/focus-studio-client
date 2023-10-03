@@ -54,7 +54,11 @@ const router = createBrowserRouter([
       {
         path: '/yourClass',
         element: <EnrollClass/>
-      }
+      },
+      {
+        path: "contact",
+        element: <Contact></Contact>,
+      },
     ],
   },
   {
@@ -73,10 +77,6 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
-      {
-        path: "contact",
-        element: <Contact></Contact>,
-      },
       {
         path: "selected",
         element: <SelectedClasses></SelectedClasses>,

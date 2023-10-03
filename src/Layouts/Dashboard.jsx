@@ -7,7 +7,6 @@ import {
   FcBiotech,
   FcDocument,
   FcBookmark,
-  FcContacts,
   FcLike,
   FcCurrencyExchange,
   FcApproval,
@@ -35,7 +34,8 @@ const Dashboard = () => {
             htmlFor="my-drawer"
             className="text-3xl drawer-button lg:hidden flex items-center gap-3 m-5"
           >
-            <FaBuffer />Open
+            <FaBuffer />
+            Open
           </label>
         </div>
         <div className="drawer-side">
@@ -43,7 +43,7 @@ const Dashboard = () => {
           <ul className="menu p-4 w-52 h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
             <div className=" my-6">
-            <img
+              <img
                 src="https://i.ibb.co/TqNnpjX/Logo-SILVER.png"
                 className="w-32"
               />
@@ -67,12 +67,12 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink to="/dashboard/approve">
-                    <FcBiotech/> Approve Courses
+                    <FcBiotech /> Approve Courses
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/makeCertificate">
-                    <FcDocument/> Manage certificate
+                    <FcDocument /> Manage certificate
                   </NavLink>
                 </li>
               </>
@@ -134,11 +134,6 @@ const Dashboard = () => {
             <li>
               <NavLink to="/classes">
                 <FcClapperboard></FcClapperboard> All Courses
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/contact">
-                <FcContacts></FcContacts> Contact
               </NavLink>
             </li>
           </ul>
