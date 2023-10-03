@@ -51,10 +51,16 @@ const Navbar = () => {
         <Link to="/instructor">Instructors</Link>
       </li>
       <li>
-        <Link to="/classes">Our Courses</Link>
+        <Link to="/classes">Courses</Link>
       </li>
       <li>
         <Link to="/about">About</Link>
+      </li>
+      <li>
+        <Link to="/yourClass">Your Class</Link>
+      </li>
+      <li>
+        <Link to="/blog">Blog</Link>
       </li>
     </>
   );

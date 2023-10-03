@@ -51,6 +51,10 @@ const router = createBrowserRouter([
         path: "/certificate/:id",
         element: <Certificate/>
       },
+      {
+        path: '/yourClass',
+        element: <EnrollClass/>
+      }
     ],
   },
   {
