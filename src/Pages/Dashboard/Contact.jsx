@@ -8,6 +8,24 @@ const Contact = () => {
   return (
     <div className="p-5 container mx-auto">
       <SectionTitle title={"contact"}></SectionTitle>
+      <div className='my-7 md:grid grid-cols-4 gap-5 text-center'>
+        <div className="border bg-white p-7 shadow-xl">
+          <h1 className="text-2xl font-semibold">Address</h1>
+          <p className="text-lg">Dhanmondi-32, Shongkor, Dhaka</p>
+        </div>
+        <div className="border bg-white p-7 shadow-xl">
+          <h1 className="text-2xl font-semibold">Phone</h1>
+          <p className="text-lg">+880 9457 3421</p>
+        </div>
+        <div className="border bg-white p-7 shadow-xl">
+          <h1 className="text-2xl font-semibold">Email</h1>
+          <p className="text-lg">focus@studio.com</p>
+        </div>
+        <div className="border bg-white p-7 shadow-xl">
+          <h1 className="text-2xl font-semibold">Website</h1>
+          <p className="text-lg">hrakash.com</p>
+        </div>
+      </div>
       <div className="mockup-window border">
         <div className="md:grid grid-cols-2 items-center gap-5 p-10 border-t">
           <div>
