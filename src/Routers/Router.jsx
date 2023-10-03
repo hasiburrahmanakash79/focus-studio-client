@@ -25,27 +25,28 @@ import ManageClass from "../Pages/Dashboard/AdminDashboard/ManageClass";
 import UserCertificate from "../Pages/Dashboard/AdminDashboard/UserCertificate";
 import Certificate from "../Pages/Dashboard/UserDashboard/Certificate";
 import PendingCourse from "../Pages/Dashboard/AdminDashboard/PendingCourse";
+import Blogs from "../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main></Main>,
+    element: <Main/>,
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home/>,
       },
       {
         path: "/instructor",
-        element: <AllInstructors></AllInstructors>,
+        element: <AllInstructors/>,
       },
       {
         path: "/classes",
-        element: <AllClasses></AllClasses>,
+        element: <AllClasses/>,
       },
       {
         path: "/about",
-        element: <About></About>,
+        element: <About/>,
       },
       {
         path: "/certificate/:id",
@@ -56,50 +57,54 @@ const router = createBrowserRouter([
         element: <EnrollClass/>
       },
       {
+        path: '/blog',
+        element: <Blogs/>
+      },
+      {
         path: "contact",
-        element: <Contact></Contact>,
+        element: <Contact/>,
       },
     ],
   },
   {
     path: "/login",
-    element: <Login></Login>,
+    element: <Login/>,
   },
   {
     path: "/signUp",
-    element: <SignUp></SignUp>,
+    element: <SignUp/>,
   },
   {
     path: "/dashboard",
     element: (
       <PrivateRoute>
-        <Dashboard></Dashboard>
+        <Dashboard/>
       </PrivateRoute>
     ),
     children: [
       {
         path: "selected",
-        element: <SelectedClasses></SelectedClasses>,
+        element: <SelectedClasses/>,
       },
       {
         path: "userProfile",
-        element: <UserProfile></UserProfile>,
+        element: <UserProfile/>,
       },
       {
         path: "enroll",
-        element: <EnrollClass></EnrollClass>,
+        element: <EnrollClass/>,
       },
       {
         path: "history",
-        element: <PaymentHistory></PaymentHistory>,
+        element: <PaymentHistory/>,
       },
       {
         path: "payment/:id",
-        element: <Payment></Payment>,
+        element: <Payment/>,
       },
       {
         path: "addReview",
-        element: <AddReview></AddReview>,
+        element: <AddReview/>,
       },
       
 
@@ -108,7 +113,7 @@ const router = createBrowserRouter([
         path: "allUser",
         element: (
           <AdminRoute>
-            <AllUsers></AllUsers>
+            <AllUsers/>
           </AdminRoute>
         ),
       },
@@ -116,7 +121,7 @@ const router = createBrowserRouter([
         path: "manageClass",
         element: (
           <AdminRoute>
-            <ManageClass></ManageClass>
+            <ManageClass/>
           </AdminRoute>
         ),
       },
@@ -142,7 +147,7 @@ const router = createBrowserRouter([
         path: "addClass",
         element: (
           <InstructorRoute>
-            <AddClass></AddClass>
+            <AddClass/>
           </InstructorRoute>
         ),
       },
@@ -150,7 +155,7 @@ const router = createBrowserRouter([
         path: "myClass",
         element: (
           <InstructorRoute>
-            <MyClasses></MyClasses>
+            <MyClasses/>
           </InstructorRoute>
         ),
       },
@@ -158,7 +163,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <PageNotFound></PageNotFound>,
+    element: <PageNotFound/>,
   },
 ]);
 

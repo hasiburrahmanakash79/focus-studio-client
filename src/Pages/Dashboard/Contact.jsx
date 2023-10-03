@@ -31,7 +31,7 @@ const Contact = () => {
           </div>
           <div className="border bg-white p-7 shadow-xl">
             <h1 className="text-2xl font-semibold">Website</h1>
-            <p className="text-lg">hrakash.com</p>
+            <p className="text-lg">hr-akash.com</p>
           </div>
         </div>
         <div className="mockup-window border">
