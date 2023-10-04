@@ -1,4 +1,8 @@
+import useBlog from "../../components/useBlog/useBlog";
+
 const Blogs = () => {
+  const [blogs] = useBlog()
+  console.log(blogs);
   return (
     <div className="pt-12">
       <div className="bg-[url('https://i.ibb.co/DY9pPK8/titlebg.jpg')] bg-cover">
