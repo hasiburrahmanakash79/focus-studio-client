@@ -45,7 +45,7 @@ const WriteBlogs = () => {
               Swal.fire({
                 showConfirmButton: false,
                 timer: 1500,
-                title: "Item added Successful",
+                title: "Blog added Successful",
                 icon: "success",
               });
             }
