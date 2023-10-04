@@ -14,7 +14,7 @@ const WriteBlogs = () => {
   const [axiosSecure] = useAxiosSecure();
   const Image_Hosting_Token = import.meta.env.VITE_image_hosting_apiKey;
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const image_hosting_url = `https://api.imgbb.com/1/upload?key=${Image_Hosting_Token}`;
 
@@ -40,8 +40,9 @@ const WriteBlogs = () => {
             image,
             status: "pending",
           };
-          axiosSecure.post("/blog", addBlog).then((data) => {
+          axiosSecure.post("/blogs", addBlog).then((data) => {
             if (data.data.insertedId) {
+                reset()
               Swal.fire({
                 showConfirmButton: false,
                 timer: 1500,
