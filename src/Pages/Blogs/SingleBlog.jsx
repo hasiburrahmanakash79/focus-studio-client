@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const SingleBlog = ({ blog }) => {
-  const { title, description, image, publish_date, writer_name } =
+  const { _id, title, description, image, publish_date, writer_name } =
     blog;
   return (
     <div className="bg-accent shadow-lg rounded-lg overflow-hidden">
@@ -16,7 +16,7 @@ const SingleBlog = ({ blog }) => {
         <h2 className="text-2xl font-semibold">{title}</h2>
         <p className="text-sm">Published on: {publish_date}</p>
         <p className="text-sm">Writer: {writer_name}</p>
-        <p className="text-base mt-2">{description.slice(0, 280)} ... <Link to='home' className="text-blue-500 hover:underline">Read more</Link></p>
+        <p className="text-base mt-2">{description.slice(0, 280)} ... <Link to={`/blog/${_id}`} className="text-blue-500 hover:underline">Read more</Link></p>
         
       </div>
     </div>
