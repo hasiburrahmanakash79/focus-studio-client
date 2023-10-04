@@ -10,6 +10,7 @@ import {
   FcLike,
   FcCurrencyExchange,
   FcApproval,
+  FcRules,
 } from "react-icons/fc";
 import { NavLink, Outlet } from "react-router-dom";
 import useTitle from "../Hook/useTitle";
@@ -87,6 +88,11 @@ const Dashboard = () => {
                 <li>
                   <NavLink to="/dashboard/addClass">
                     <FcAddDatabase></FcAddDatabase> Add Course
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/writeBlog">
+                    <FcRules/> Write Blog
                   </NavLink>
                 </li>
                 <li>

@@ -26,6 +26,7 @@ import UserCertificate from "../Pages/Dashboard/AdminDashboard/UserCertificate";
 import Certificate from "../Pages/Dashboard/UserDashboard/Certificate";
 import PendingCourse from "../Pages/Dashboard/AdminDashboard/PendingCourse";
 import Blogs from "../Pages/Blogs/Blogs";
+import WriteBlogs from "../Pages/Dashboard/InstructorDashboard/WriteBlogs";
 
 const router = createBrowserRouter([
   {
@@ -156,6 +157,14 @@ const router = createBrowserRouter([
         element: (
           <InstructorRoute>
             <MyClasses/>
+          </InstructorRoute>
+        ),
+      },
+      {
+        path: "writeBlog",
+        element: (
+          <InstructorRoute>
+            <WriteBlogs/>
           </InstructorRoute>
         ),
       },
