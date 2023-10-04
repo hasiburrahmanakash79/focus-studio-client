@@ -9,7 +9,7 @@ const Certificate = () => {
   const certificateRef = useRef(null);
   const { id } = useParams();
   const [courses, setCourses] = useState([]);
-  const [imageUrl, setImageUrl] = useState(""); // State to store the image URL
+  const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
     fetch("https://focus-studio-server.vercel.app/history")
@@ -36,7 +36,7 @@ const Certificate = () => {
     html2canvas(certificate).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF();
-      pdf.addImage(imgData, "PNG", 0, 0, 220, 150); // Adjust width and height as needed
+      pdf.addImage(imgData, "PNG", 0, 0, 220, 150);
       pdf.save("certificate.pdf");
     });
   };
