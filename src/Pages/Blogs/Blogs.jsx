@@ -14,7 +14,7 @@ const Blogs = () => {
           </h2>
         </div>
       </div>
-      <div>
+      <div className="grid grid-cols-3 container mx-auto my-7">
         {
           blogs.map(blog => <SingleBlog key={blog?._id} blog={blog}></SingleBlog>)
         }
