@@ -1,102 +1,10 @@
 [
   {
-    "name": "Emily Johnson",
-    "id": "783ert2h23h32g",
+    "title": "Emily Johnson",
     "image": "https://images.squarespace-cdn.com/content/v1/59d55d412aeba54362e00bb1/1547328988541-D732YCKXID8578E23KGT/_DSC7599ashleebrookecrop.jpg?format=1000w",
-    "email": "emily.johnson@example.com",
-    "classesTaken": 15,
-    "popularClassName": "Landscape Photography",
-    "category": "popular",
-    "numberOfStudents": 25
-  },
-  {
-    "name": "John Smith",
-    "id": "7h8fh9gdf9g7df9",
-    "image": "https://st2.depositphotos.com/1000423/9255/i/600/depositphotos_92556060-stock-photo-male-photographer-taking-picture.jpg",
-    "email": "smith@example.com",
-    "classesTaken": 8,
-    "popularClassName": "Portrait Photography",
-    "category": "popular",
-    "numberOfStudents": 12
-  },
-  {
-    "name": "David Lee",
-    "id": "89fh78s9f89s7d9",
-    "image": "https://us.123rf.com/450wm/photosvit/photosvit1909/photosvit190902903/129457955-content-creator-man-bearded-hipster-photographer-man-shooting-photos-old-but-still-good-manual.jpg?ver=6",
-    "email": "lee.david@example.com",
-    "classesTaken": 12,
-    "popularClassName": "Astrophotography",
-    "category": "popular",
-    "numberOfStudents": 18
-  },
-  {
-    "name": "James Wilson",
-    "id": "5h5j6g45hgfhg4",
-    "image": "https://media.istockphoto.com/id/610744966/photo/portrait-of-photographer-taking-picture-outdoor.jpg?s=170667a&w=0&k=20&c=_w0XlZq5sUN3v1tasNfRl0-TRMrE6liELH8exXeO7l8=",
-    "email": "james.wilson@example.com",
-    "classesTaken": 20,
-    "popularClassName": "Wedding Photography",
-    "category": "popular",
-    "numberOfStudents": 30
-  },
-  {
-    "name": "Michael Brown",
-    "id": "1g2h3j4k5l6z7x8",
-    "image": "https://d2ajlz7o3p8ddv.cloudfront.net/media/user_profile/Karthik%20Profile_2767_Karthik.jpg",
-    "email": "Brown.Michael@example.com",
-    "classesTaken": 10,
-    "popularClassName": "Street Photography",
-    "category": "popular",
-    "numberOfStudents": 20
-  },
-  {
-    "name": "Sarah Davis",
-    "id": "0o9i8u7y6t5r4e3",
-    "image": "https://www.1854.photography/wp-content/uploads/2020/11/Amy-Vitale-BJP-8-scaled.jpg",
-    "email": "Sarah.Davis@example.com",
-    "classesTaken": 18,
-    "popularClassName": "Wildlife Photography",
-    "category": "popular",
-    "numberOfStudents": 15
-  },
-  {
-    "name": "Alex Thompson",
-    "id": "3e4r5t6y7u8i9o0",
-    "image": "https://images.squarespace-cdn.com/content/v1/62be9869d1c1493be2a65589/1656658218591-Q01PCNQ3YIY87E6B4PLS/Eliana+profile.png?format=1000w",
-    "email": "Thompson.Alex@example.com",
-    "classesTaken": 5,
-    "popularClassName": "Fashion Photography",
-    "category": "popular",
-    "numberOfStudents": 8
-  },
-  {
-    "name": "Olivia Anderson",
-    "id": "2s3d4f5g6h7j8k9",
-    "image": "https://cdn.shoutoutarizona.com/wp-content/uploads/2021/02/c-PersonalRubySandoval__horizontal_headshot_1611795038629.jpg",
-    "email": "Anderson.Olivia@example.com",
-    "classesTaken": 14,
-    "popularClassName": "Food Photography",
-    "category": "popular",
-    "numberOfStudents": 22
-  },
-  {
-    "name": "Daniel Wilson",
-    "id": "6g5f4d3s2a1q2w3",
-    "image": "https://st.depositphotos.com/1075946/3896/i/600/depositphotos_38965117-stock-photo-photographer-taking-picture.jpg",
-    "email": "Daniel.Wilson@example.com",
-    "classesTaken": 9,
-    "popularClassName": "Sports Photography",
-    "category": "simple",
-    "numberOfStudents": 10
-  },
-  {
-    "name": "Sophia Martinez",
-    "id": "b1v2n3m4k5l6j7",
-    "image": "https://comeplum.com/wp-content/uploads/2018/07/My-Phot-Kit_Praise-Santos-_ComePlum-3.jpg",
-    "email": "Sophia.Martinez@example.com",
-    "classesTaken": 22,
-    "popularClassName": "Macro Photography",
-    "category": "popular",
-    "numberOfStudents": 35
+    "Writer_email": "emily.johnson@example.com",
+    "publish_date": "15-12-2009",
+    "writer_name": "Landscape Photography",
+    "description": "popular"
   }
 ]

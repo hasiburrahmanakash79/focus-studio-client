@@ -29,18 +29,18 @@ const WriteBlogs = () => {
       .then((res) => res.json())
       .then((imageResponse) => {
         if (imageResponse.success) {
-          const imgURL = imageResponse.data.display_url;
-          const { name, price, instructor_name, email, available_seat } = data;
-          const addClass = {
-            name,
-            price: parseInt(price),
-            instructor_name,
-            email,
-            available_seat: parseInt(available_seat),
-            image: imgURL,
+          const image = imageResponse.data.display_url;
+          const { title, writer_name, Writer_email, publish_date, description } = data;
+          const addBlog = {
+            title,
+            writer_name,
+            Writer_email,
+            publish_date,
+            description,
+            image,
             status: "pending",
           };
-          axiosSecure.post("/blog", addClass).then((data) => {
+          axiosSecure.post("/blog", addBlog).then((data) => {
             if (data.data.insertedId) {
               Swal.fire({
                 showConfirmButton: false,
