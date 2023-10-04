@@ -1,4 +1,5 @@
 import useBlog from "../../components/useBlog/useBlog";
+import SingleBlog from "./SingleBlog";
 
 const Blogs = () => {
   const [blogs] = useBlog()
@@ -12,6 +13,11 @@ const Blogs = () => {
             Blogs
           </h2>
         </div>
+      </div>
+      <div>
+        {
+          blogs.map(blog => <SingleBlog key={blog?._id} blog={blog}></SingleBlog>)
+        }
       </div>
 
     </div>
