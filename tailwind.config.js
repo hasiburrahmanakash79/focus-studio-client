@@ -64,18 +64,18 @@ export default {
   daisyui: {
     themes: [{
       customLightTheme: {
-        textColor: '#111111',
+        color: '#111111',
         background: '#ffffff',
         primary: '#1A0072',
         secondary: '#e0d1d2',
-        accent: '#7E89A5',
+        accent: '#f0f0f0',
       },
       customDarkTheme: {
-        textColor: '#ffffff',
+        color: '#ffffff',
         background: '#081221',
         primary: '#ACBD0E',
         secondary: '#e0d1d2',
-        accent: '#7E89A5',
+        accent: '#343434',
       },
     }]
   },

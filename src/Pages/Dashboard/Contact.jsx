@@ -17,19 +17,19 @@ const Contact = () => {
       </div>
       <div className="p-5 container mx-auto">
         <div className="my-7 md:grid grid-cols-4 gap-5 text-center">
-          <div className="border bg-white p-7 shadow-xl">
+          <div className="border bg-accent rounded-lg p-7 shadow-xl">
             <h1 className="text-2xl font-semibold">Address</h1>
             <p className="text-lg">Dhanmondi-32, Shongkor, Dhaka</p>
           </div>
-          <div className="border bg-white p-7 shadow-xl">
+          <div className="border bg-accent rounded-lg p-7 shadow-xl">
             <h1 className="text-2xl font-semibold">Phone</h1>
             <p className="text-lg">+880 9457 3421</p>
           </div>
-          <div className="border bg-white p-7 shadow-xl">
+          <div className="border bg-accent rounded-lg p-7 shadow-xl">
             <h1 className="text-2xl font-semibold">Email</h1>
             <p className="text-lg">focus@studio.com</p>
           </div>
-          <div className="border bg-white p-7 shadow-xl">
+          <div className="border bg-accent rounded-lg p-7 shadow-xl">
             <h1 className="text-2xl font-semibold">Website</h1>
             <p className="text-lg">hr-akash.com</p>
           </div>
@@ -45,23 +45,23 @@ const Contact = () => {
                   type="text"
                   name=""
                   placeholder="Name"
-                  className=" w-full p-3 border-2"
+                  className=" w-full p-3 border-2 bg-transparent"
                 />
                 <input
                   type="email"
                   name=""
                   placeholder="Email"
-                  className=" w-full p-3 border-2"
+                  className=" w-full p-3 border-2 bg-transparent"
                 />
                 <textarea
                   name=""
                   rows="4"
                   placeholder="Message"
-                  className="w-full p-3 border-2"
+                  className="w-full p-3 border-2 bg-transparent"
                 ></textarea>
                 <input
                   type="submit"
-                  className=" w-full btn btn-primary btn-outline text-white font-bold p-3 border-2"
+                  className=" w-full btn btn-primary btn-outline font-bold p-3 border-2"
                 />
               </form>
             </div>
