@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
 const WriteBlogs = () => {
-    useTitle("Blog");
+  useTitle("Blog");
 
   const { user } = useContext(AuthContext);
 
@@ -53,92 +53,96 @@ const WriteBlogs = () => {
         }
       });
   };
-    return (
-        <div className="p-5">
-          <SectionTitle title={"Write a Blog"}></SectionTitle>
-    
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="bg-base-200 md:w-1/2 mx-auto p-10 rounded-lg"
-          >
-            <div>
-              <label className="label">
-                <span className="label-text">Blog Title</span>
-              </label>
-              <input
-                type="text"
-                {...register("title", { required: true })}
-                placeholder="Type here"
-                className="input w-full input-bordered"
-              />
-            </div>
-            <div className="md:grid grid-cols-2 gap-5">
-              <div>
-                <label className="label">
-                  <span className="label-text">Writer Name</span>
-                </label>
-                <input
-                  {...register("writer_name", { required: true })}
-                  type="text"
-                  defaultValue={user.displayName}
-                  placeholder="Type here"
-                  className="input w-full input-bordered"
-                />
-              </div>
-              <div>
-                <label className="label">
-                  <span className="label-text">Instructor Email</span>
-                </label>
-                <input
-                  {...register("email", { required: true })}
-                  type="text"
-                  defaultValue={user.email}
-                  placeholder="Type here"
-                  className="input w-full input-bordered"
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-5">
-              <div>
-                <label className="label">
-                  <span className="label-text">Price</span>
-                </label>
-                <input
-                  {...register("price", { required: true })}
-                  type="number"
-                  placeholder="Type here"
-                  className="input w-full input-bordered"
-                />
-              </div>
-              <div>
-                <label className="label">
-                  <span className="label-text">Publish Date</span>
-                </label>
-                <input
-                  {...register("publish_date", { required: true })}
-                  type="date"
-                  placeholder="Type here"
-                  className="input w-full input-bordered"
-                />
-              </div>
-            </div>
-            <div>
-              <input
-                type="file"
-                {...register("image", { required: true })}
-                className="file-input w-full my-3 input-bordered"
-              />
-            </div>
-            <div>
-              <input
-                type="submit"
-                value="Add Class"
-                className="btn btn-outline order-none w-full my-5"
-              />
-            </div>
-          </form>
+  return (
+    <div className="p-5">
+      <SectionTitle title={"Write a Blog"}></SectionTitle>
+
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="bg-base-200 md:w-1/2 mx-auto p-10 rounded-lg"
+      >
+        <div>
+          <label className="label">
+            <span className="label-text">Blog Title</span>
+          </label>
+          <input
+            type="text"
+            {...register("title", { required: true })}
+            placeholder="Type here"
+            className="input w-full input-bordered"
+          />
         </div>
-      );
+        <div className="md:grid grid-cols-2 gap-5">
+          <div>
+          <label className="label">
+              <span className="label-text">Blog Image</span>
+            </label>
+            <input
+              type="file"
+              {...register("image", { required: true })}
+              className="file-input w-full input-bordered"
+            />
+          </div>
+          <div>
+            <label className="label">
+              <span className="label-text">Publish Date</span>
+            </label>
+            <input
+              {...register("publish_date", { required: true })}
+              type="date"
+              placeholder="Type here"
+              className="input w-full input-bordered"
+            />
+          </div>
+        </div>
+        <div className="md:grid grid-cols-2 gap-5">
+          <div>
+            <label className="label">
+              <span className="label-text">Writer Name</span>
+            </label>
+            <input
+              {...register("writer_name", { required: true })}
+              type="text"
+              defaultValue={user.displayName}
+              placeholder="Type here"
+              className="input w-full input-bordered"
+            />
+          </div>
+          <div>
+            <label className="label">
+              <span className="label-text">Writer Email</span>
+            </label>
+            <input
+              {...register("Writer_email", { required: true })}
+              type="text"
+              defaultValue={user.email}
+              placeholder="Type here"
+              className="input w-full input-bordered"
+            />
+          </div>
+        </div>
+        <div>
+            <label className="label">
+              <span className="label-text">Description</span>
+            </label>
+            <textarea
+              {...register("description", { required: true })}
+              rows={6}
+              placeholder="Description"
+              className="w-full p-3 bg-transparent border rounded-lg"
+            />
+          </div>
+
+        <div>
+          <input
+            type="submit"
+            value="Add Blog"
+            className="btn btn-outline order-none w-full my-5"
+          />
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default WriteBlogs;
