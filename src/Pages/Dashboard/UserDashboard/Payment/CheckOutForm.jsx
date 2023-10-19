@@ -74,6 +74,7 @@ const CheckOutForm = ({ tutorial, price }) => {
         date: new Date(),
         quantity: tutorial.length,
         classID: tutorial._id,
+        enrollID: tutorial.id,
         image: tutorial.image,
         instructor: tutorial.instructor_name,
         classNames: tutorial.name,

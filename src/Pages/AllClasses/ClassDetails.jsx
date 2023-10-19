@@ -3,14 +3,18 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import useAddToCart from "../../Hook/useAddToCart";
+import useEnrollClass from "../../Hook/useEnrollClass";
 
 const ClassDetails = ({ tutorial }) => {
-  const { name, image, instructor_name, available_seat, price, _id } =
-    tutorial;
+  const [enroll] = useEnrollClass();
+  const { name, image, instructor_name, available_seat, price, _id } = tutorial;
+  const matched = enroll.find((enrollClass) => enrollClass.enrollID == _id);
+  console.log(matched, "..............Match");
+  console.log(enroll);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const [, refetch] = useAddToCart()
+  const [, refetch] = useAddToCart();
 
   const handleSelectClass = (tutorial) => {
     console.log(tutorial);
@@ -59,6 +63,18 @@ const ClassDetails = ({ tutorial }) => {
     }
   };
 
+  const handleAlert = () => {
+    Swal.fire({
+      title: 'You all ready parches this course',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
+  }
+
   return (
     <div className="border p-3 hover:shadow-xl hover:border-2 rounded-md">
       <div className="avatar">
@@ -73,14 +89,25 @@ const ClassDetails = ({ tutorial }) => {
         <p>Price: ${price} </p>
       </div>
       <div className="text-end">
-        <Link>
-          <button
-            onClick={() => handleSelectClass(tutorial)}
-            className="btn btn-sm btn-primary my-3"
-          >
-            Select Class
-          </button>
-        </Link>
+        {matched ? (
+          <Link>
+            <button
+              onClick={() => handleAlert()}
+              className="btn btn-sm btn-error my-3"
+            >
+              Selected
+            </button>
+          </Link>
+        ) : (
+          <Link>
+            <button
+              onClick={() => handleSelectClass(tutorial)}
+              className="btn btn-sm btn-primary my-3"
+            >
+              Select Class
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );
