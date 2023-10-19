@@ -21,7 +21,7 @@ const HeroContent = () => {
           equipment mastery, and artistic vision."
         </p>
         <div>
-          <Link>
+          <Link to='/classes'>
             <button className="btn btn-secondary mt-9">Explore Our Courses</button>
           </Link>
         </div>
