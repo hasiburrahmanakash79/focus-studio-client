@@ -67,7 +67,7 @@ const ClassDetails = ({ tutorial }) => {
 
   const handleSelect = () => {
     Swal.fire({
-      title: "You all ready select this course",
+      title: "You all ready select this course. You can done your payment",
       showClass: {
         popup: "animate__animated animate__fadeInDown",
       },
@@ -94,7 +94,7 @@ const ClassDetails = ({ tutorial }) => {
         {matched ? (
           <Link to="/yourClass">
             <button
-              className="btn btn-sm text-red-400 my-3"
+              className="btn btn-sm btn-secondary text-red-400 my-3"
             >
               You All ready buy this course
             </button>

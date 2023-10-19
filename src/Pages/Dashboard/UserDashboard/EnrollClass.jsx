@@ -8,15 +8,6 @@ import useEnrollClass from "../../../Hook/useEnrollClass";
 const EnrollClass = () => {
   useTitle("Your Class");
   const [enroll] = useEnrollClass()
-  // const [courses, setCourses] = useState([]);
-  // const { user } = useContext(AuthContext);
-  // useEffect(() => {
-  //   fetch(`https://focus-studio-server.vercel.app/history/${user?.email}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setCourses(data);
-  //     });
-  // }, [user]);
   return (
     <div className="p-7 container mx-auto">
       <SectionTitle title={"your enroll classes"}></SectionTitle>
