@@ -18,7 +18,7 @@ const EnrollClass = () => {
   //     });
   // }, [user]);
   return (
-    <div className="p-7">
+    <div className="p-7 container mx-auto">
       <SectionTitle title={"your enroll classes"}></SectionTitle>
       <div className="grid md:grid-cols-3 gap-5">
         {enroll.map((classes) => (

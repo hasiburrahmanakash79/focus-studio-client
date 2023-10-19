@@ -7,8 +7,10 @@ import useEnrollClass from "../../Hook/useEnrollClass";
 
 const ClassDetails = ({ tutorial }) => {
   const [enroll] = useEnrollClass();
+  const [classes] = useAddToCart();
   const { name, image, instructor_name, available_seat, price, _id } = tutorial;
   const matched = enroll.find((enrollClass) => enrollClass.enrollID == _id);
+  const selected = classes.find((selectedClass) => selectedClass.id == _id);
   console.log(matched, "..............Match");
   console.log(enroll);
   const { user } = useContext(AuthContext);
@@ -63,17 +65,17 @@ const ClassDetails = ({ tutorial }) => {
     }
   };
 
-  const handleAlert = () => {
+  const handleSelect = () => {
     Swal.fire({
-      title: 'You all ready parches this course',
+      title: "You all ready select this course",
       showClass: {
-        popup: 'animate__animated animate__fadeInDown'
+        popup: "animate__animated animate__fadeInDown",
       },
       hideClass: {
-        popup: 'animate__animated animate__fadeOutUp'
-      }
-    })
-  }
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
+  };
 
   return (
     <div className="border p-3 hover:shadow-xl hover:border-2 rounded-md">
@@ -90,23 +92,35 @@ const ClassDetails = ({ tutorial }) => {
       </div>
       <div className="text-end">
         {matched ? (
-          <Link>
+          <Link to="/yourClass">
             <button
-              onClick={() => handleAlert()}
-              className="btn btn-sm btn-error my-3"
+              className="btn btn-sm text-red-400 my-3"
             >
-              Selected
+              You All ready buy this course
             </button>
           </Link>
         ) : (
-          <Link>
-            <button
-              onClick={() => handleSelectClass(tutorial)}
-              className="btn btn-sm btn-primary my-3"
-            >
-              Select Class
-            </button>
-          </Link>
+          <div>
+            {selected ? (
+              <Link>
+                <button
+                  onClick={() => handleSelect()}
+                  className="btn btn-sm btn-warning my-3"
+                >
+                  Selected
+                </button>
+              </Link>
+            ) : (
+              <Link>
+                <button
+                  onClick={() => handleSelectClass(tutorial)}
+                  className="btn btn-sm btn-primary my-3"
+                >
+                  Select Class
+                </button>
+              </Link>
+            )}
+          </div>
         )}
       </div>
     </div>
