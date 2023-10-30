@@ -111,14 +111,22 @@ const ClassDetails = ({ tutorial }) => {
                 </button>
               </Link>
             ) : (
-              <Link>
-                <button
-                  onClick={() => handleSelectClass(tutorial)}
-                  className="btn btn-sm btn-primary my-3"
-                >
-                  Select Class
-                </button>
-              </Link>
+              <div>
+                {available_seat === 0 ? (
+                  <button className="btn btn-sm btn-disabled my-3">
+                    Select Class
+                  </button>
+                ) : (
+                  <Link>
+                    <button
+                      onClick={() => handleSelectClass(tutorial)}
+                      className="btn btn-sm btn-primary my-3"
+                    >
+                      Select Class
+                    </button>
+                  </Link>
+                )}
+              </div>
             )}
           </div>
         )}
