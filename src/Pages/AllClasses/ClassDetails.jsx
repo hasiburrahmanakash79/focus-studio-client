@@ -113,9 +113,9 @@ const ClassDetails = ({ tutorial }) => {
             ) : (
               <div>
                 {available_seat === 0 ? (
-                  <button className="btn btn-sm btn-disabled my-3">
+                  <p className="btn btn-sm btn-error my-3">
                     Select Class
-                  </button>
+                  </p>
                 ) : (
                   <Link>
                     <button
