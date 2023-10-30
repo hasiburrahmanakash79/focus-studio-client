@@ -26,11 +26,11 @@ const EnrollClass = () => {
               <h2 className="card-title">{classes?.classNames}</h2>
               <p>Instructor: {classes?.instructor}</p>
               {classes.certificate === "yes" ? (
-                <Link to={`/certificate/${classes._id}`} className="btn">
+                <Link to={`/certificate/${classes._id}`} className="btn btn-warning">
                   Your course complete
                 </Link>
               ) : (
-                <button className="btn">Start Class</button>
+                <button className="btn btn-info">Start Class</button>
               )}
             </div>
           </div>
