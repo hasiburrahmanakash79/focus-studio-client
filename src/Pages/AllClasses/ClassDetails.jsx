@@ -78,44 +78,76 @@ const ClassDetails = ({ tutorial }) => {
   };
 
   return (
-    <div className="border p-3 hover:shadow-xl hover:border-2 rounded-md">
-      <div className="avatar">
-        <div className="w-full rounded">
-          <img src={image} />
-        </div>
-      </div>
-      <div className="">
-        <h1 className="text-2xl font-semibold">{name}</h1>
-        <p>Instructor name: {instructor_name} </p>
-        <p>Available seats: {available_seat} </p>
-        <p>Price: ${price} </p>
-      </div>
-      <div className="text-end">
-        {matched ? (
-          <Link to="/yourClass">
-            <button
-              className="btn btn-sm btn-secondary  my-3"
-            >
-              You All ready buy this course
-            </button>
-          </Link>
-        ) : (
-          <div>
-            {selected ? (
-              <Link>
-                <button
-                  onClick={() => handleSelect()}
-                  className="btn btn-sm btn-warning my-3"
-                >
-                  Selected
+    <>
+      {available_seat === 0 ? (
+        <div className="border-4 p-3 hover:shadow-xl border-red-600 hover:border-2 rounded-md">
+          <div className="avatar">
+            <div className="w-full rounded">
+              <img src={image} />
+            </div>
+          </div>
+          <div className="">
+            <h1 className="text-2xl font-semibold">{name}</h1>
+            <p>Instructor name: {instructor_name} </p>
+            <p>Available seats: {available_seat} </p>
+            <p>Price: ${price} </p>
+          </div>
+          <div className="text-end">
+            {matched ? (
+              <Link to="/yourClass">
+                <button className="btn btn-sm btn-secondary  my-3">
+                  You All ready buy this course
                 </button>
               </Link>
             ) : (
               <div>
-                {available_seat === 0 ? (
-                  <p className="btn btn-sm btn-error my-3">
-                    No Seat available
-                  </p>
+                {selected ? (
+                  <Link>
+                    <button
+                      onClick={() => handleSelect()}
+                      className="btn btn-sm btn-warning my-3"
+                    >
+                      Selected
+                    </button>
+                  </Link>
+                ) : (
+                  <p className="btn btn-sm bg-red-600 my-3">No Seat available</p>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      ) : (
+        <div className="border p-3 hover:shadow-xl hover:border-2 rounded-md">
+          <div className="avatar">
+            <div className="w-full rounded">
+              <img src={image} />
+            </div>
+          </div>
+          <div className="">
+            <h1 className="text-2xl font-semibold">{name}</h1>
+            <p>Instructor name: {instructor_name} </p>
+            <p>Available seats: {available_seat} </p>
+            <p>Price: ${price} </p>
+          </div>
+          <div className="text-end">
+            {matched ? (
+              <Link to="/yourClass">
+                <button className="btn btn-sm btn-secondary  my-3">
+                  You All ready buy this course
+                </button>
+              </Link>
+            ) : (
+              <div>
+                {selected ? (
+                  <Link>
+                    <button
+                      onClick={() => handleSelect()}
+                      className="btn btn-sm btn-warning my-3"
+                    >
+                      Selected
+                    </button>
+                  </Link>
                 ) : (
                   <Link>
                     <button
@@ -129,9 +161,9 @@ const ClassDetails = ({ tutorial }) => {
               </div>
             )}
           </div>
-        )}
-      </div>
-    </div>
+        </div>
+      )}
+    </>
   );
 };
 
